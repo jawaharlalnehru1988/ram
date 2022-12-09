@@ -27,11 +27,11 @@
       <button mat-menu-item [matMenuTriggerFor]="fish">Srimath Bhagavat Gita</button>
       <button mat-menu-item [matMenuTriggerFor]="amphibians">Srimath Bhagavathm</button>
       <button mat-menu-item [matMenuTriggerFor]="reptiles">Caitanya Charitamritam</button>
-      <button mat-menu-item *ngFor="let book of books">{{book}}</button>
+      <button mat-menu-item *ngFor="let book of books">{{book.bookName}}</button>
     </mat-menu>
     
     <mat-menu #invertebrates="matMenu">
-      <button mat-menu-item *ngFor="let article of articles">{{article}}</button>
+      <button mat-menu-item *ngFor="let article of articles">{{article.serialNo +". "+article.BookName}}</button>
     </mat-menu>
     <mat-menu #fish="matMenu" >
       <button mat-menu-item *ngFor="let Chapter of array">{{Chapter}}</button>

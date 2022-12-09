@@ -10,72 +10,10 @@ import { InfoCollectComponent } from '../info-collect/info-collect.component';
 })
 export class NavigationComponent implements OnInit {
   text: string = '';
-  books = [
-    "Bhagavad-gita As It Is",
-    "Srimad-Bhagavatam",
-    "Sri Caitanya-caritamrta",
-    "Teachings of Lord Caitanya",
-    "The Nectar of Devotion",
-    "The Nectar of Instruction",
-    "Easy Journey to Other Planets",
-    "Krsna Consciousness The Topmost Yoga System",
-    "KRSNA, The Supreme Personality of Godhead",
-    "Perfect Questions, Perfect Answers",
-    "Teachings of Lord Kapila, the Son of Devahuti",
-    "Teachings of Queen Kunti",
-    "Krsna, the Reservoir of Pleasure",
-    "The Science of Self Realization",
-    "The Path of Perfection",
-    "Life Comes From Life",
-    "The Perfection of Yoga",
-    "Beyond Birth and Death",
-    "On the Way to Krsna",
-    "Raja - Vidya: The King of Knowledge",
-    "Elevation to Krsna Consciousness",
-    "Krsna Consciousness, The Matchless Gift",
-    "Light of the Bhagavata",
-    "Sri Isopanisad - 1974 Edition",
-    "The Journey of Self - Discovery",
-    "Transcendental Teachings of Prahlada Maharaja",
-    "A Second Chance: The Story of a Near - Death Experience",
-    "Mukunda - mala - stotra",
-    "Narada-bhakti-sutra",
-  ];
-  articles = [
-    "Devotee and the Divinity",
-   "Solution of Present Crisis by Bhagwat Geeta",
-   "Liberation in Practice",
-   "Man is the Architect of His Own Fortune",
-  " Religion is Godly Life",
-  " Shaktipujah",
-  " World Pacifist and the Bhagwat gita",
-  " Fragment of an Untitled Essay on His Divine Grace Srila",
-  " Cult of Lord Sri Caitanya.",
-  " Conception of Gita-nagari Part 1",
-  " Conception of Gita-nagari Part 2",
-  " Interpretations of Bhagavad-gita",
-  " Divinity of Lord Caitanya",
-  " What is the Matter with the World?",
-  " Perfection at Home-A Novel Contribution to the Fallen Humanity",
-  " Comment of Visva Dharma",
-  " Vyasa-puja Offering to His Divine Grace Srila Bhaktisiddhanta Sarasvati Gosvami Maharaja, 1961",
-  " Vrndavana Bhajana, 1958",
-  " Prahlad Maharaja",
-  " International Institution for God Consciousness 1965/66",
-  " Srimad Bhawatam- India's Message of Peace and Goodwill",
-  " An Analysis of Bhagwat Geeta",
-  " Analysis of Bhagwat Geeta",
-  " Viraha Astaka",
-  " The Real Peace Formula",
-  " Who is Crazy?",
-  " Manifestation of Dharma in Human Being - Feb 1972",
-  " Message of Krishna Consciousness",
-  " Who is Crazy? (Original)",
-  " How Should One Cultivate Human Spirit-Part 1",
-  " How Should One Cultivate Human Spirit-Part 2 "
-  ];
-   array: any[] = [];
+  array: any[] = [];
   cantos: any[] = [];
+  articles: any;
+  books: any;
 
   constructor(private dialog: MatDialog, private httpClient: HttpClient) { }
 
@@ -86,6 +24,14 @@ export class NavigationComponent implements OnInit {
   for (let j = 1; j<=12; j++){
     this.cantos.push("Cantos "+j)
   }
+  this.httpClient.get('https://sheetdb.io/api/v1/ufofhn680ebn3?sheet=bookTopic').subscribe(res=>{
+  this.articles = res;
+    
+  })
+  this.httpClient.get('https://sheetdb.io/api/v1/ufofhn680ebn3?sheet=book').subscribe(res =>{
+    this.books = res;
+    
+  })
   }
   
   openDialog(){
