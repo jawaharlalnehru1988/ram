@@ -23,15 +23,23 @@ import { FooterComponent } from './navigation/footer/footer.component';
 import { InfoCollectComponent } from './info-collect/info-collect.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SrilaPrabhupadaComponent } from './article/srila-prabhupada/srila-prabhupada.component';
+import { CalenderComponent } from './calender/calender.component';
+import { FullCalendarModule } from '@fullcalendar/angular'; // must go before plugins
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
+import interactionPlugin from '@fullcalendar/interaction';
 
-
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     FooterComponent,
     InfoCollectComponent,
-    SrilaPrabhupadaComponent
+    SrilaPrabhupadaComponent,
+    CalenderComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +59,8 @@ import { SrilaPrabhupadaComponent } from './article/srila-prabhupada/srila-prabh
     MatIconModule,
     MatButtonModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FullCalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
