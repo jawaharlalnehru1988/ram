@@ -7,6 +7,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 
 const routes: Routes = [
   {path: '', component: NavigationComponent},
+  {path: 'navigation', component: NavigationComponent},
   {path: 'footer', component: FooterComponent},
   { path: "srilaPrabhupada", component: SrilaPrabhupadaComponent },
   {path: "calendar", component: CalenderComponent}
