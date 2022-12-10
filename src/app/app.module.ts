@@ -27,6 +27,9 @@ import { CalenderComponent } from './calender/calender.component';
 import { FullCalendarModule } from '@fullcalendar/angular'; // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
 import interactionPlugin from '@fullcalendar/interaction';
+import { PopUpEventComponent } from './calender/pop-up-event/pop-up-event.component';
+
+
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -39,7 +42,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     FooterComponent,
     InfoCollectComponent,
     SrilaPrabhupadaComponent,
-    CalenderComponent
+    CalenderComponent,
+    PopUpEventComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/angular'; // useful for typechecking
+import {MatDialog} from '@angular/material/dialog';
+import { PopUpEventComponent } from './pop-up-event/pop-up-event.component';
 
 @Component({
   selector: 'app-calender',
@@ -15,7 +17,7 @@ export class CalenderComponent implements OnInit {
     events: [
       { title: "Utpana Ekadasi", date:'2022-11-20', color: 'red', EventId:1},
       { title: "Mokshada / Vaikuntha/ Mukkoti/ Gita Ekadasi", date:'2022-12-04', color: 'red', EventId: 2},
-      { title: "Dwadasi", date:'2022-12-05', color: 'blue', EventId: 3},
+      { title: "Dwadasi", date:'2022-12-09', color: 'blue', EventId: 3},
       { title: "Saphala Ekadasi", date:'2022-12-19', color: 'red', EventId: 33},
       { title: "Putrada Ekadasi", date:'2023-01-02', color: 'red', EventId: 4},
       { title: "Sattila Ekadasi", date:'2023-01-18', color: 'red', EventId: 5},
@@ -42,11 +44,36 @@ export class CalenderComponent implements OnInit {
       {  title: "Adhika masa - Parama Ekadasi", date:'2023-08-12', color: 'red', EventId: 28}
     ]
   };
-  constructor() { }
+  eventOfDate: any;
+  getDay: string="";
+  eventDate: any;
+  dateFormat: string = '';
+  eventTitle: any;
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.eventOfDate = this.calendarOptions.events;
+    this.getDay = this.weekday[this.today.getDay()];
+    this.dateFormat = this.today.getFullYear()+"-"+(this.today.getMonth()+1)+"-"+this.today.toDateString().slice(8, 10);
+    console.log(this.dateFormat);
+   
   }
   handleDateClick(arg:any) {
-    alert('date click! ' + arg.dateStr)
+    // alert('date click! ' + arg.dateStr)
+    this.eventOfDate.map((item:any)=>{   
+      if(item.date === arg.dateStr ){
+    this.eventDate = item.date;
+    this.eventTitle = item.title;
+    this.dialog.open(PopUpEventComponent, {
+      data: {
+        date: this.eventDate,
+        title: this.eventTitle
+      }
+    })
+      } else{
+        console.log('this is not matching');
+      }
+    })
+
   }
 }

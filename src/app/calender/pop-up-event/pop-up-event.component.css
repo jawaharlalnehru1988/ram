@@ -1,0 +1,12 @@
+.buttonDiv{
+    display: flex;
+    justify-content: flex-end;
+}
+.closeBtn {
+    padding: 0px 8px;
+    border: 1px solid #e7d9d9;
+    box-shadow: 1px 1px 7px 1px #6c5252;
+    border-radius: 4px;
+    position: relative;
+    bottom: 9px;
+}
