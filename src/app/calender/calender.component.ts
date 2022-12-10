@@ -64,11 +64,16 @@ export class CalenderComponent implements OnInit {
       if(item.date === arg.dateStr ){
     this.eventDate = item.date;
     this.eventTitle = item.title;
-    this.dialog.open(PopUpEventComponent, {
+    let dialogRef= this.dialog.open(PopUpEventComponent, {
       data: {
         date: this.eventDate,
         title: this.eventTitle
       }
+    })
+    dialogRef.afterClosed().subscribe(res=>{
+      console.log(res);
+      this.dateFormat = res;
+      
     })
       } else{
         console.log('this is not matching');

@@ -1,6 +1,18 @@
+<div class="bodyBG">
 <div class="buttonDiv">
     <span mat-dialog-close class="closeBtn">X</span>
 </div>
-<p>May this day be a Devotional Day On Lord Krishna</p>
-<div>{{data.date}}</div>
-<div>{{data.title}}</div>
+<div mat-dialog-title fxLayoutAlign="space-between">
+    <p>May this day be a Krishna Conscious Day</p>
+</div>
+<div fxLayoutAlign="center">
+<mat-dialog-content>
+<div style="font-size: 20px;">{{data.date}}</div>
+<div style="font-size: 20px;" class="mt-3">{{data.title}}</div>
+</mat-dialog-content>
+</div>
+<mat-dialog-actions fxLayoutAlign="center">
+    
+    <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close={{data.date}}>Srila Prabhupada Quotes on Ekadasi</button>
+</mat-dialog-actions>
+</div>
