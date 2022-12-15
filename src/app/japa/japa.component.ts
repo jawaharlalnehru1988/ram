@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import * as moment from 'moment';
 
@@ -9,6 +9,7 @@ import * as moment from 'moment';
 })
 export class JapaComponent implements OnInit {
   audioObj = new Audio();
+  @ViewChild('#tempRef') tempRef!: ElementRef ;
   audioEvents = [
     "ended",
     "error",
@@ -55,11 +56,19 @@ export class JapaComponent implements OnInit {
   }
   openKirtan(){
 let audio = new Audio();
-audio.src = '../assets/mp3/prabhupadaChant.mp3'
+
+audio.src = '../assets/mp3/prabhupadaChant.mp3';
 audio.load();
 audio.play();
 this.increaseCount();
   }
 
+  enableLoop(tempRef:any){
+   tempRef.loop = true;
+   
+    //  this.openKirtan()
 
+
+   
+  }
 }

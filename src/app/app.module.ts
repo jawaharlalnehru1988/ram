@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -29,6 +28,11 @@ import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
 import interactionPlugin from '@fullcalendar/interaction';
 import { PopUpEventComponent } from './calender/pop-up-event/pop-up-event.component';
 import { JapaComponent } from './japa/japa.component';
+import { MatListModule } from '@angular/material/list';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatCardModule } from '@angular/material/card';
+import { KirtanLessonComponent } from './kirtan-lesson/kirtan-lesson.component';
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player'
 
 
 
@@ -46,13 +50,18 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     CalenderComponent,
     PopUpEventComponent,
     JapaComponent,
+    KirtanLessonComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    MatCardModule,
+    MatSliderModule,
     MatDialogModule,
+    MatListModule,
     MatRippleModule,
     MatMenuModule,
     MatTableModule,
@@ -67,6 +76,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     HttpClientModule,
     FlexLayoutModule,
     FullCalendarModule,
+    NgxYoutubePlayerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

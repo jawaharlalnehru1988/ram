@@ -1,0 +1,11 @@
+<p>kirtan-lesson works!</p>
+<youtube-player
+[videoId]="id"
+[playerVars]="playerVars"
+(ready)="savePlayer($event)"
+>
+
+</youtube-player>
+
+<button type="button" (click)="playVideo()">Play video</button>
+<button type="button" (click)="pauseVideo()">Pause Video</button>
