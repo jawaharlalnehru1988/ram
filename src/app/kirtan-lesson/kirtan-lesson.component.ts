@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,14 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./kirtan-lesson.component.css']
 })
 export class KirtanLessonComponent implements OnInit {
-id="AuT3rfQP8DA";
+  clor = 'green'
+ids=["AuT3rfQP8DA", "DsNwFkcgPIA", "TGPrC1phnFQ", "QnQaxdxWPso", "MuKCtgzmImc", "rhRpr1mNLMI"];
+lessons:any;
 playerVars ={
   cc_lang_pref:"en"
 }
 player:any;
-  constructor() { }
+  constructor(private httpClient:HttpClient) { }
 
   ngOnInit(): void {
+    this.httpClient.get('https://sheetdb.io/api/v1/ufofhn680ebn3?sheet=karatal').subscribe(res=>{
+  this.lessons = res;
+    
+  })
   }
 savePlayer(player:any){
 this.player = player;

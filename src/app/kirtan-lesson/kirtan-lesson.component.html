@@ -1,11 +1,14 @@
-<p>kirtan-lesson works!</p>
+<div *ngFor="let lesson of lessons" class="full-width video-div">
+    <div>
 <youtube-player
-[videoId]="id"
+[videoId]="lesson.id"
 [playerVars]="playerVars"
 (ready)="savePlayer($event)"
 >
 
 </youtube-player>
-
-<button type="button" (click)="playVideo()">Play video</button>
-<button type="button" (click)="pauseVideo()">Pause Video</button>
+</div>
+<div>
+   <strong> கரதாளம் பாடம் {{lesson.sNo}}</strong>
+</div>
+</div>
