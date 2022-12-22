@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
+import { ViewportScroller } from "@angular/common";
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class BooksComponent implements OnInit {
   books: any;
 imgsrc = 'assets/images/prabhupadaBooks/bs-back.jpg'
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private scroller: ViewportScroller,) { }
 
   ngOnInit(): void {
     this.httpClient.get('https://sheetdb.io/api/v1/ufofhn680ebn3?sheet=prbook').subscribe(res=>{
@@ -17,5 +17,8 @@ imgsrc = 'assets/images/prabhupadaBooks/bs-back.jpg'
   console.log("this.books", this.books);
   
   });
+  }
+  scroll(){
+    this.scroller.scrollToAnchor("down");
   }
 }
