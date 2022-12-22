@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs';
+import { interval, Observable, timer } from 'rxjs';
 import * as moment from 'moment';
 
 
@@ -68,6 +68,15 @@ this.increaseCount();
   openfile(toggle:any){
 console.log(toggle._checked);
 if(toggle._checked == true){
+  // const obs$ = interval(1000)
+  // obs$.subscribe(res => {
+  //   console.log(res);
+  // })
+  // const ons$ = timer(5000, 1000);
+  // ons$.subscribe(res=>{
+  //   console.log(res);
+    
+  // })
   this.streamObserver().subscribe(event =>{
     
   });
@@ -106,7 +115,7 @@ return new Observable(observer =>{
   this.audioObj2.play();
 
   const handler = (event:Event) =>{
-    console.log(event.timeStamp);
+    console.log(event);
  
     // if(this.formatTime(event.timeStamp) > "08:00:00" && this.formatTime(event.timeStamp) < "08:58:00"){
     //    this.increaseCount();

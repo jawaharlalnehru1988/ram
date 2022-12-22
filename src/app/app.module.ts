@@ -33,7 +33,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatCardModule } from '@angular/material/card';
 import { KirtanLessonComponent } from './kirtan-lesson/kirtan-lesson.component';
 import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
-import { MatButtonToggleModule } from '@angular/material/button-toggle'
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { BooksComponent } from './books/books.component'
 
 
 
@@ -52,6 +53,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     PopUpEventComponent,
     JapaComponent,
     KirtanLessonComponent,
+    BooksComponent,
 
   ],
   imports: [
