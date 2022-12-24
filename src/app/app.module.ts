@@ -36,10 +36,6 @@ import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { BooksComponent } from './books/books.component';
 
-
-
-
-
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   interactionPlugin
