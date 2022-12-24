@@ -25,15 +25,21 @@
     </div>
     <div fxLayoutAlign.lt-sm="center center" fxLayout="column">
         <p class="japa-indicate"> கீழே உள்ள பட்டனை கிளிக் செய்து உங்களுடைய ஜபத்தை  ஆரம்பிக்கவும்  </p>
-        <button mat-fab color="accent" class="chant-count" (click)="increaseCount()"><span>{{beatCounting}}</span></button>
+        <button mat-fab color="accent" class="chant-count" (click)="increaseCount()"><span>{{beatCounting || count}}</span></button>
     </div>
     </div>
     <div fxLayoutAlign="center" fxLayout.lt-sm="column">
         <div fxLayoutAlign="center">
-            <mat-button-toggle #toggle  class="play_button" mat-raised-button  (click)="openfile(toggle)">
+
+            <mat-button-toggle-group type="button" #toggle >
+                <mat-button-toggle (change)="openKirtan($event)">
+                    click here for single raised chant
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+            <button  class="play_button" mat-raised-button  (click)="openfile()">
                <p> பிரபுபாதருடன் ஜபம் செய்ய</p> 
                    <p> இங்கே கிளிக் செய்யவும் </p>
-            </mat-button-toggle>
+            </button>
         </div>
         <div fxLayoutAlign="center">
             <span>Volume</span>
