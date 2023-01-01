@@ -1,0 +1,12 @@
+
+<div *ngFor="let lesson of lessons" class="full-width video-div">
+<youtube-player
+[videoId]="lesson.youLink"
+
+>
+
+</youtube-player>
+<div>
+    <strong>{{lesson.title}}</strong>
+</div>
+</div>

@@ -38,6 +38,7 @@ import { BooksComponent } from './books/books.component';
 import { CustomePipePipe } from './kirtan-lesson/custome-pipe.pipe';
 import { AccessPipe } from './kirtan-lesson/access.pipe';
 import { ImagesComponent } from './images/images.component';
+import { AratiSongsComponent } from './arati-songs/arati-songs.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -57,7 +58,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     BooksComponent,
     CustomePipePipe,
     AccessPipe,
-    ImagesComponent
+    ImagesComponent,
+    AratiSongsComponent
 
   ],
   imports: [
