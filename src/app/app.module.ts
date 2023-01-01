@@ -35,6 +35,9 @@ import { KirtanLessonComponent } from './kirtan-lesson/kirtan-lesson.component';
 import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { BooksComponent } from './books/books.component';
+import { CustomePipePipe } from './kirtan-lesson/custome-pipe.pipe';
+import { AccessPipe } from './kirtan-lesson/access.pipe';
+import { ImagesComponent } from './images/images.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -51,7 +54,10 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     PopUpEventComponent,
     JapaComponent,
     KirtanLessonComponent,
-    BooksComponent
+    BooksComponent,
+    CustomePipePipe,
+    AccessPipe,
+    ImagesComponent
 
   ],
   imports: [

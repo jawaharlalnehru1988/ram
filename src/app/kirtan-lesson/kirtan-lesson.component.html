@@ -10,5 +10,19 @@
 </div>
 <div>
    <strong> கரதாளம் பாடம் {{lesson.sNo}}</strong>
+   <div>
+    date today : {{ dateToday }}
+    <p>date today pipe  : {{ dateToday | date | uppercase}}</p>
+    <p>date pipe  : {{ dateToday | date: 'short'| lowercase}}</p>
+    <p>date pipe  : {{ dateToday | date: 'fullDate'| uppercase}}</p>
+    <p>date pipe  : {{ dateToday | date: 'dd.MMM.yyyy'| uppercase}}</p>
+    <p>name: {{name | uppercase}}</p>
+    <p>number: {{num | number: '10.1-2'}}</p>
+    <p>name: {{name | slice:5}}</p>
+    <!-- <p>the reverse of the rama is {{ "rama" | customePipe }}</p> -->
+    <p>Age {{birthday | date}}</p>
+    <p>Age {{birthday | customePipe}}</p>
+    <p>{{birthday}}</p>
+   </div>
 </div>
 </div>
