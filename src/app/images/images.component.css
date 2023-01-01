@@ -14,3 +14,38 @@
   .container-max{
     background-image: url("../../assets/images/background.jpg");
   }
+  @media  (min-width: 280px) and (max-width: 420px){
+    .image-class{
+      width: 25vw;
+      border-radius: 16px;
+      margin-bottom: 16px;
+    }
+  }
+  @media  (min-width: 421px) and (max-width: 719px){
+    .image-class{
+      width: 25vw;
+      border-radius: 24px;
+      margin-bottom: 24px;
+    }
+  }
+  @media  (min-width: 720px) and (max-width: 1020px){
+    .image-class{
+      width: 20vw;
+      border-radius: 20px;
+    }
+    .content-navigators{
+      justify-content: space-around;
+    }
+  }
+  @media  (min-width: 1021px) and (max-width: 1420px){
+    .image-class{
+      width: 25vw;
+     
+    }
+  }
+  @media (min-width:1420px) {
+    .content-navigators{
+      justify-content: space-around;
+    }
+  }
+  
