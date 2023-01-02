@@ -10,6 +10,7 @@ import { PopUpEventComponent } from './pop-up-event/pop-up-event.component';
 })
 export class CalenderComponent implements OnInit {
   today = new Date();
+  date!:Date;
   weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
@@ -49,7 +50,11 @@ export class CalenderComponent implements OnInit {
   eventDate: any;
   dateFormat: string = '';
   eventTitle: any;
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog) { 
+    setInterval(() => {
+      this.date = new Date()
+    }, 1000)
+  }
 
   ngOnInit(): void {
     this.eventOfDate = this.calendarOptions.events;

@@ -1,4 +1,6 @@
 <button mat-raised-button routerLink="/navigation" color="accent">◄◄◄ home page</button>
+<div> <h1> {{today | date: 'fullDate' | convert}} {{date   | date: "HH:mm:ss"}}</h1></div>
+
 <full-calendar class="calender-body" [options]="calendarOptions"></full-calendar>
 <div class="container">
 <div *ngIf="dateFormat === '2022-11-20'">
