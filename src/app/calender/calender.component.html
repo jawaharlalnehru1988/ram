@@ -1,5 +1,5 @@
 <button mat-raised-button routerLink="/navigation" color="accent">◄◄◄ home page</button>
-<div> <h1> {{today | date: 'fullDate' | convert}} {{date   | date: "HH:mm:ss"}}</h1></div>
+<div class="date_class"> {{today | date:'EEEE' | convert}},  {{today | date: 'longDate' | monthConvert}} {{date   | date: "HH:mm:ss"}}</div>
 
 <full-calendar class="calender-body" [options]="calendarOptions"></full-calendar>
 <div class="container">

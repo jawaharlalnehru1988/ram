@@ -40,6 +40,7 @@ import { AccessPipe } from './kirtan-lesson/access.pipe';
 import { ImagesComponent } from './images/images.component';
 import { AratiSongsComponent } from './arati-songs/arati-songs.component';
 import { ConvertPipe } from './calender/convert.pipe';
+import { MonthConvertPipe } from './calender/month-convert.pipe';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -61,8 +62,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     AccessPipe,
     ImagesComponent,
     AratiSongsComponent,
-    ConvertPipe
-
+    ConvertPipe,
+    MonthConvertPipe
   ],
   imports: [
     BrowserModule,
