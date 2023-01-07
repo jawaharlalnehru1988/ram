@@ -41,6 +41,9 @@ import { ImagesComponent } from './images/images.component';
 import { AratiSongsComponent } from './arati-songs/arati-songs.component';
 import { ConvertPipe } from './calender/convert.pipe';
 import { MonthConvertPipe } from './calender/month-convert.pipe';
+import { GuruparamparaComponent } from './article/srila-prabhupada/guruparampara/guruparampara.component';
+import { GuruDetailsComponent } from './article/srila-prabhupada/guru-details/guru-details.component';
+import { AddDialogComponent } from './article/srila-prabhupada/guruparampara/add-dialog/add-dialog.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -63,7 +66,10 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     ImagesComponent,
     AratiSongsComponent,
     ConvertPipe,
-    MonthConvertPipe
+    MonthConvertPipe,
+    GuruparamparaComponent,
+    GuruDetailsComponent,
+    AddDialogComponent
   ],
   imports: [
     BrowserModule,

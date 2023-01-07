@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AratiSongsComponent } from './arati-songs/arati-songs.component';
+import { GuruDetailsComponent } from './article/srila-prabhupada/guru-details/guru-details.component';
+import { GuruparamparaComponent } from './article/srila-prabhupada/guruparampara/guruparampara.component';
 import { SrilaPrabhupadaComponent } from './article/srila-prabhupada/srila-prabhupada.component';
 import { BooksComponent } from './books/books.component';
 import { CalenderComponent } from './calender/calender.component';
@@ -20,7 +22,9 @@ const routes: Routes = [
   {path:'kirtan-lesson', component: KirtanLessonComponent},
   {path: 'books', component: BooksComponent},
   {path: 'images', component: ImagesComponent},
-  {path: 'arati-songs', component: AratiSongsComponent}
+  {path: 'arati-songs', component: AratiSongsComponent},
+  {path: 'guruparampara', component: GuruparamparaComponent},
+  {path: 'user/:id', component: GuruDetailsComponent}
 ];
 
 @NgModule({
