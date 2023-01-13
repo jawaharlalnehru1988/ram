@@ -28,7 +28,14 @@ export class AddDialogComponent implements OnInit {
     } 
   }
   addDetails(){
-  if(!this.editData){
+  if(this.editData){
+    console.log(this.editData, this.acharyaFormGroup.value);
+    
+    this.httpClient.put(`https://sheetdb.io/api/v1/ufofhn680ebn3/id/${this.editData.id}?sheet=guruParampara`, this.acharyaFormGroup.value).subscribe(res=>{
+      console.log(res);
+    })
+  } else {
+    
     this.httpClient.post('https://sheetdb.io/api/v1/ufofhn680ebn3?sheet=guruParampara', this.acharyaFormGroup.value).subscribe({
       next:((res:any)=>{
         console.log("successfully added", res);
@@ -40,8 +47,6 @@ export class AddDialogComponent implements OnInit {
         
       }
     })
-  } else {
-    this.httpClient.put<any>('https://sheetdb.io/api/v1/ufofhn680ebn3?sheet=guruParampara', this.acharyaFormGroup.value)
   }
   }
 }

@@ -4,3 +4,12 @@ table {
 .addBtn{
     float: right;
 }
+.details{
+width: 50vw;
+height: 40px;
+text-overflow: ".....";
+overflow: hidden;
+}
+td{
+  cursor: pointer;
+}

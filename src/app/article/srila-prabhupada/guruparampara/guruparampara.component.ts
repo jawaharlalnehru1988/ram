@@ -5,6 +5,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 import {MatDialog} from '@angular/material/dialog';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
+import { ActivatedRoute } from '@angular/router';
 
 export interface PeriodicElement {
   name: string;
@@ -32,7 +33,7 @@ export class GuruparamparaComponent implements OnInit, AfterViewInit {
   constructor(private httpClient: HttpClient, public dialog: MatDialog) { }
   
   ngOnInit() {
-    this.getDetails();
+    this.getDetails();    
   }
   getDetails(){
     this.httpClient.get('https://sheetdb.io/api/v1/ufofhn680ebn3?sheet=guruParampara').subscribe({
