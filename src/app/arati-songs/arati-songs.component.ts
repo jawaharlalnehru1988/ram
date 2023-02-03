@@ -12,7 +12,7 @@ export class AratiSongsComponent implements OnInit {
   constructor(private httpClient:HttpClient) { }
 
   ngOnInit(): void {
-    this.httpClient.get('https://sheetdb.io/api/v1/ufofhn680ebn3?sheet=aratiSongs').subscribe(res=>{
+    this.httpClient.get('https://jagannathadasa16.github.io/bookApi/aratisongs.json').subscribe(res=>{
   this.lessons = res;
     })
   }

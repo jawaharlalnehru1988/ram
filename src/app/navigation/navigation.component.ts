@@ -24,11 +24,11 @@ export class NavigationComponent implements OnInit {
   for (let j = 1; j<=12; j++){
     this.cantos.push("Cantos "+j)
   }
-  this.httpClient.get('https://sheetdb.io/api/v1/ufofhn680ebn3?sheet=bookTopic').subscribe(res=>{
+  this.httpClient.get('https://jagannathadasa16.github.io/bookApi/bookdb.json').subscribe(res=>{
   this.articles = res;
-    
+  
   })
-  this.httpClient.get('https://sheetdb.io/api/v1/ufofhn680ebn3?sheet=book').subscribe(res =>{
+  this.httpClient.get('https://jagannathadasa16.github.io/bookApi/book.json').subscribe(res =>{
     this.books = res;
     
   })

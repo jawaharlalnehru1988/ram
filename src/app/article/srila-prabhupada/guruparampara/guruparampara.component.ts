@@ -36,7 +36,7 @@ export class GuruparamparaComponent implements OnInit, AfterViewInit {
     this.getDetails();    
   }
   getDetails(){
-    this.httpClient.get('https://sheetdb.io/api/v1/ufofhn680ebn3?sheet=guruParampara').subscribe({
+    this.httpClient.get('https://jagannathadasa16.github.io/bookApi/guruparamapara.json').subscribe({
       next:(res:any) => {
         console.log(res);
         this.dataSource = new MatTableDataSource(res);

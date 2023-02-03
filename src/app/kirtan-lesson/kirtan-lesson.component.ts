@@ -39,7 +39,7 @@ dateToday: string = '';
   constructor(private httpClient:HttpClient) { }
    birthday = new Date("November 14, 1988 03:24:00");
   ngOnInit(): void {
-    this.httpClient.get('https://sheetdb.io/api/v1/ufofhn680ebn3?sheet=karatal').subscribe(res=>{
+    this.httpClient.get('https://jagannathadasa16.github.io/bookApi/kirtan.json').subscribe(res=>{
   this.lessons = res;
     this.dateToday = new Date().toDateString();
     this.name = "hare krishna";

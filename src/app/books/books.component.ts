@@ -12,7 +12,7 @@ imgsrc = 'assets/images/prabhupadaBooks/bs-back.jpg'
   constructor(private httpClient: HttpClient, private scroller: ViewportScroller,) { }
 
   ngOnInit(): void {
-    this.httpClient.get('https://sheetdb.io/api/v1/ufofhn680ebn3?sheet=prbook').subscribe(res=>{
+    this.httpClient.get('https://jagannathadasa16.github.io/bookApi/prbook.json').subscribe(res=>{
   this.books = res;
   console.log("this.books", this.books);
   

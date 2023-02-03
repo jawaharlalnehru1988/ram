@@ -25,7 +25,7 @@ export class InfoCollectComponent implements OnInit {
   }
   saveForm(){
     console.log(this.basicInfoForm.value);
-    this.httpClient.post('https://sheetdb.io/api/v1/ufofhn680ebn3?sheet=devotee', this.basicInfoForm.value).subscribe(res =>{
+    this.httpClient.post('https://jagannathadasa16.github.io/bookApi/devotee.json', this.basicInfoForm.value).subscribe(res =>{
       console.log(res);
       this.basicInfoForm.reset();
       // this.router.navigate(['/navigation']);

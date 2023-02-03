@@ -9,7 +9,7 @@ export class MonthConvertPipe implements PipeTransform {
   engMonths: any;
   tamilMonths: any;
 constructor(private httpClient: HttpClient){
-  this.httpClient.get('https://sheetdb.io/api/v1/ufofhn680ebn3?sheet=month').subscribe(res=>{
+  this.httpClient.get('https://jagannathadasa16.github.io/bookApi/month.json').subscribe(res=>{
   this.months = res;
   // console.log("this.months", this.months.map((item:any) => item.emonth));
  this.engMonths = this.months.map((item:any) => item.emonth)

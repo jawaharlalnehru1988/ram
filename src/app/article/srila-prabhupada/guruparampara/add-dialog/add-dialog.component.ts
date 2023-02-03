@@ -36,7 +36,7 @@ export class AddDialogComponent implements OnInit {
     })
   } else {
     
-    this.httpClient.post('https://sheetdb.io/api/v1/ufofhn680ebn3?sheet=guruParampara', this.acharyaFormGroup.value).subscribe({
+    this.httpClient.post('https://jagannathadasa16.github.io/bookApi/guruparamapara.json', this.acharyaFormGroup.value).subscribe({
       next:((res:any)=>{
         console.log("successfully added", res);
         this.acharyaFormGroup.reset();
