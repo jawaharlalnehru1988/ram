@@ -1,0 +1,67 @@
+<!--
+ <h1 mat-dialog-title>Add Mritanga Lessons</h1>
+<div mat-dialog-content>
+<form [formGroup]="mritangaForm">
+<mat-form-field appearance="outline">
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title">
+  </mat-form-field>
+<mat-form-field appearance="outline">
+    <mat-label>Author</mat-label>
+    <input matInput formControlName="author">
+  </mat-form-field>
+<mat-form-field appearance="outline">
+    <mat-label>YoutubeId</mat-label>
+    <input matInput formControlName="youtubeId">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Details</mat-label>
+    <textarea matInput formControlName="detail"></textarea>
+  </mat-form-field>
+</form>
+</div> 
+-->
+<div class="sign-in">
+    <div class="d-flex justify-content-between">
+        <h2>Add your Mritanga Lessons</h2>
+        <a mat-dialog-close> <mat-icon><span class="material-symbols-rounded">close </span></mat-icon> </a>
+        </div>
+        <form action="" [formGroup]="mritangaForm">
+        <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Title</mat-label>
+              <input formControlName="title" matInput placeholder="Give your first Name">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Author</mat-label>
+              <input formControlName="author" matInput placeholder="Give your Email Id">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>YoutubeId</mat-label>
+              <input formControlName="youtubeId" matInput placeholder="Give your Mobile">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label> Details</mat-label>
+              <textarea matInput formControlName="detail"></textarea>
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+          </p>
+        </form>
+        <mat-dialog-actions align="end">
+            <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+            <button mat-raised-button color="primary" (click)="saveForm()"> Submit</button>
+        </mat-dialog-actions>
+</div>

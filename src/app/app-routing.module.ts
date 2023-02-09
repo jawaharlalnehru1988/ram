@@ -9,6 +9,7 @@ import { CalenderComponent } from './calender/calender.component';
 import { ImagesComponent } from './images/images.component';
 import { JapaComponent } from './japa/japa.component';
 import { KirtanLessonComponent } from './kirtan-lesson/kirtan-lesson.component';
+import { MritangaComponent } from './kirtan-lesson/mritanga/mritanga.component';
 import { FooterComponent } from './navigation/footer/footer.component';
 import { NavigationComponent } from './navigation/navigation.component';
 
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path: 'images', component: ImagesComponent},
   {path: 'arati-songs', component: AratiSongsComponent},
   {path: 'guruparampara', component: GuruparamparaComponent},
-  {path: 'user/:id', component: GuruDetailsComponent}
+  {path: 'user/:id', component: GuruDetailsComponent},
+  {path: 'kirtan-lesson/mritanga', component: MritangaComponent}
 ];
 
 @NgModule({

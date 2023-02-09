@@ -31,12 +31,12 @@ export class AddDialogComponent implements OnInit {
   if(this.editData){
     console.log(this.editData, this.acharyaFormGroup.value);
     
-    this.httpClient.put(`https://sheetdb.io/api/v1/ufofhn680ebn3/id/${this.editData.id}?sheet=guruParampara`, this.acharyaFormGroup.value).subscribe(res=>{
+    this.httpClient.put("https://drab-gold-fly-yoke.cyclic.app/guruparampara/"+this.editData.id, this.acharyaFormGroup.value).subscribe(res=>{
       console.log(res);
     })
   } else {
     
-    this.httpClient.post('https://jagannathadasa16.github.io/bookApi/guruparamapara.json', this.acharyaFormGroup.value).subscribe({
+    this.httpClient.post('https://drab-gold-fly-yoke.cyclic.app/guruparampara', this.acharyaFormGroup.value).subscribe({
       next:((res:any)=>{
         console.log("successfully added", res);
         this.acharyaFormGroup.reset();

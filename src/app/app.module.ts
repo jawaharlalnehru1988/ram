@@ -44,6 +44,9 @@ import { MonthConvertPipe } from './calender/month-convert.pipe';
 import { GuruparamparaComponent } from './article/srila-prabhupada/guruparampara/guruparampara.component';
 import { GuruDetailsComponent } from './article/srila-prabhupada/guru-details/guru-details.component';
 import { AddDialogComponent } from './article/srila-prabhupada/guruparampara/add-dialog/add-dialog.component';
+import { MritangaComponent } from './kirtan-lesson/mritanga/mritanga.component';
+import { KirtanDialogComponent } from './kirtan-lesson/kirtan-dialog/kirtan-dialog.component';
+import { MatSelectModule } from '@angular/material/select';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -69,7 +72,9 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MonthConvertPipe,
     GuruparamparaComponent,
     GuruDetailsComponent,
-    AddDialogComponent
+    AddDialogComponent,
+    MritangaComponent,
+    KirtanDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -87,6 +92,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MatPaginatorModule,
     MatTooltipModule,
     FormsModule,
+    MatSelectModule,
     MatInputModule,
     ReactiveFormsModule,
     MatFormFieldModule,
