@@ -11,8 +11,9 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./kirtan-dialog.component.css']
 })
 export class KirtanDialogComponent implements OnInit {
+
+  mritangaForm! : FormGroup;
   constructor( private api: ApiService, private fb: FormBuilder,  @Inject(MAT_DIALOG_DATA) public editData: any, private dialogRef: MatDialogRef<KirtanDialogComponent>) { }
-    mritangaForm! : FormGroup;
 
   ngOnInit(): void {
     this.mritangaForm = this.fb.group({
@@ -21,33 +22,55 @@ export class KirtanDialogComponent implements OnInit {
       youtubeId: ['', Validators.required],
       detail: ['', Validators.required]
     });
-    console.log(this.editData);
-    if(this.editData){
-      this.mritangaForm.controls['title'].setValue(this.editData.title);
-      this.mritangaForm.controls['author'].setValue(this.editData.author);
-      this.mritangaForm.controls['youtubeId'].setValue(this.editData.youtubeId);
-      this.mritangaForm.controls['detail'].setValue(this.editData.detail);
-    }
-    
+    this.editdata();
   }
-  // onNoClick(): void {
-  //   this.dialogRef.close();
-  // }
+editdata(){
+  if(this.editData){   
+    // this.actionBtn = "Update";
+    this.mritangaForm.controls['title'].setValue(this.editData.title);
+    this.mritangaForm.controls['author'].setValue(this.editData.author);
+    this.mritangaForm.controls['youtubeId'].setValue(this.editData.youtubeId);
+    this.mritangaForm.controls['detail'].setValue(this.editData.detail);
+  }
+}
+
   saveForm(){
+  if(!this.editData){
     if (this.mritangaForm.valid) {
       this.api.postLesson(this.mritangaForm.value).subscribe(
         {
           next:(response)=>{
             alert("added successfully");
             this.mritangaForm.reset();
-            this.dialogRef.close("our form is saved");
+            this.dialogRef.close("save");
           },
           error: ()=>{
             alert("error while adding the lessons")
           }
         })
-      
+  
+
     }
+  } else {
+  
+  if (this.mritangaForm.valid) {
+    this.api.updateLessons(this.mritangaForm.value, this.editData.id).subscribe({
+      next:(res)=>{
+        alert("product has been updated");
+        this.mritangaForm.reset();
+        this.dialogRef.close("update");
+      },
+      error:()=>{
+        alert("Error while updating the record");
+      }
+    });
+        
+  }
     
   }
 }
+}
+
+
+  
+

@@ -28,11 +28,12 @@ export class MritangaComponent implements OnInit {
   }
   openDialog() {
    this.dialog.open(KirtanDialogComponent, {
-    width: '450px',
-    disableClose: true,
-    data: {
-      position: 'center'
+    width: '450px'
+   }).afterClosed().subscribe(val =>{
+    if (val === "save") {
+      this.getAllLessons();
     }
+    
    })
   }
   getAllLessons(){
@@ -52,6 +53,10 @@ export class MritangaComponent implements OnInit {
     this.dialog.open(KirtanDialogComponent,{
       width: '30%',
       data: row
+    }).afterClosed().subscribe(val=>{
+      if (val === "update") {
+        this.getAllLessons();
+      }
     })
   }
   applyFilter(event: Event) {
@@ -64,5 +69,13 @@ export class MritangaComponent implements OnInit {
   }
   savePlayer(player:any){
     this.player = player;
+    }
+    delete(row:any){
+this.api.deleteLesson(row.id).subscribe({
+  next:(res)=>{
+    alert("this row data is deleted success fully");
+    this.getAllLessons();
+  }
+})
     }
 }
