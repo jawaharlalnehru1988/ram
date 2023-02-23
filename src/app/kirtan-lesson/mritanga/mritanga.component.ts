@@ -21,10 +21,19 @@ export class MritangaComponent implements OnInit {
     cc_lang_pref:"en"
   }
   player: any;
+  showFullText = false;
+  mritangaLessons: any;
   constructor(public dialog: MatDialog, private api: ApiService) { }
 
   ngOnInit(): void {
     this.getAllLessons();
+    
+  }
+  toggleFullText() {
+    this.showFullText = !this.showFullText;
+  }
+  formatText(text: any) {
+    return text.replace(/\n/g, '<br>');
   }
   openDialog() {
    this.dialog.open(KirtanDialogComponent, {
@@ -39,6 +48,8 @@ export class MritangaComponent implements OnInit {
   getAllLessons(){
     this.api.getLesson().subscribe({
       next:(response)=>{
+        console.log("response", response);
+        this.mritangaLessons = response;
         this.dataSource = new MatTableDataSource(response);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
@@ -49,6 +60,7 @@ export class MritangaComponent implements OnInit {
       }
     })
   }
+  
   editLesson(row:any){
     this.dialog.open(KirtanDialogComponent,{
       width: '30%',

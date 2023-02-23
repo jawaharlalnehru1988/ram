@@ -18,3 +18,23 @@ table {
     max-width: 1200px;
     margin: 0 auto;
   }
+  .example-card {
+    max-width: 400px;
+  }
+  
+  .my-card-class {
+    background-color: pink;
+  }
+  .example-header-image {
+    background-image: url('../../../assets/images/srilaprabhupada.png');
+    background-size: cover;
+  }
+  p, details {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    background-color: pink;
+    padding: 16px;
+  }
