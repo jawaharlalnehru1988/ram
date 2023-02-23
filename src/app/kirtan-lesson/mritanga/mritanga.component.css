@@ -35,6 +35,4 @@ table {
     text-overflow: ellipsis;
     white-space: nowrap;
     max-width: 100%;
-    background-color: pink;
-    padding: 16px;
   }
