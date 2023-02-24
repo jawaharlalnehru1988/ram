@@ -44,9 +44,7 @@ table {
   }
   p, details {
     display: inline-block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: wrap;
     max-width: 100%;
     font-size: 16px;
     font-weight: 900;
