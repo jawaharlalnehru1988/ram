@@ -29,6 +29,10 @@ table {
     background-color: #a3ed8d;
     box-shadow: 0px 0px 20px 2px green;
   }
+  .mat-card-header .mat-card-subtitle:not(:first-child) {
+    margin-top: -8px;
+    font-weight: 700;
+}
   .mat-card>.mat-card-actions:last-child {
     
     background-color: #030300d6;
