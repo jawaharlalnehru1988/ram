@@ -47,6 +47,8 @@ import { AddDialogComponent } from './article/srila-prabhupada/guruparampara/add
 import { MritangaComponent } from './kirtan-lesson/mritanga/mritanga.component';
 import { KirtanDialogComponent } from './kirtan-lesson/kirtan-dialog/kirtan-dialog.component';
 import { MatSelectModule } from '@angular/material/select';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -82,6 +84,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonToggleModule,
+    MatProgressSpinnerModule,
     MatCardModule,
     MatSliderModule,
     MatDialogModule,

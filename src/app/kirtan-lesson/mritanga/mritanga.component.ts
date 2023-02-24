@@ -23,6 +23,8 @@ export class MritangaComponent implements OnInit {
   player: any;
   showFullText = false;
   mritangaLessons: any;
+  loading: boolean =false;
+  primary = "white";
   constructor(public dialog: MatDialog, private api: ApiService) { }
 
   ngOnInit(): void {
@@ -48,11 +50,11 @@ export class MritangaComponent implements OnInit {
   getAllLessons(){
     this.api.getLesson().subscribe({
       next:(response)=>{
-        console.log("response", response);
         this.mritangaLessons = response;
         this.dataSource = new MatTableDataSource(response);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
+        // this.loading = true;
       },
       error:()=>{
         console.log('some error occures');

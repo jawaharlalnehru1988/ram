@@ -10,12 +10,12 @@ export class ApiService {
   postLesson(data:any){
     return this.http.post<any>("http://localhost:3000/lessons", data);
   }
-  getLesson(){
-return this.http.get<any>("https://drab-gold-fly-yoke.cyclic.app/lessons");
-  }
 //   getLesson(){
-// return this.http.get<any>("http://localhost:3000/lessons");
+// return this.http.get<any>("https://drab-gold-fly-yoke.cyclic.app/lessons");
 //   }
+  getLesson(){
+return this.http.get<any>("http://localhost:3000/lessons");
+  }
   updateLessons(data:any, id: number){
     return this.http.put<any>("http://localhost:3000/lessons/"+id, data);
   }

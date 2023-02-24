@@ -22,9 +22,18 @@ table {
     max-width: 400px;
   }
   
-  .my-card-class {
-    background-color: pink;
+  .mat-card {
+    padding: 6px;
+    margin: 4px;
+    text-align: center;
+    background-color: #a3ed8d;
+    box-shadow: 0px 0px 20px 2px green;
   }
+  .mat-card>.mat-card-actions:last-child {
+    
+    background-color: #030300d6;
+    /* color: white; */
+}
   .example-header-image {
     background-image: url('../../../assets/images/srilaprabhupada.png');
     background-size: cover;
@@ -35,4 +44,6 @@ table {
     text-overflow: ellipsis;
     white-space: nowrap;
     max-width: 100%;
+    font-size: 16px;
+    font-weight: 900;
   }
