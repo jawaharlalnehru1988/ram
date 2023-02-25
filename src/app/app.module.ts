@@ -51,6 +51,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
 
+
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   interactionPlugin
@@ -109,6 +110,6 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     NgxYoutubePlayerModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -23,8 +23,12 @@ return this.http.get<any>("https://drab-gold-fly-yoke.cyclic.app/lessons");
     return this.http.delete<any>("http://localhost:3000/lessons/"+id);
   }
 
+  // getMenus(){
+  //   return this.http.get<any>('http://localhost:3000/menus');
+  // }
+
   getMenus(){
-    return this.http.get<any>('http://localhost:3000/menus');
+    return this.http.get<any>('https://drab-gold-fly-yoke.cyclic.app/menus');
   }
   getEvents(){
     return this.http.get<any>('http://localhost:3000/eventdetails');
