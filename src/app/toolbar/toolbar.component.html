@@ -1,0 +1,48 @@
+<div class="nav-bar">
+    <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between">
+        <button mat-icon-button [matMenuTriggerFor]="animals" aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <div fxLayout fxLayoutAlign="center center"><img src="assets/images/logo.jpg" class="logo" alt="">ISKCON Kanyakumari</div>
+        
+        
+      <div class="example-icon">
+        <button mat-icon-button (click)="openDialog()">
+          Sign In
+        </button>
+      </div>
+      </mat-toolbar>
+    </div>
+    
+    <mat-menu #animals="matMenu" >
+        <div *ngFor="let route of allRouterPath">
+            <button mat-menu-item  [routerLink]="route.routerLink">{{route.routerPath}}</button>
+
+        </div>
+        
+      </mat-menu>
+      <!-- <mat-menu #vertebrates="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="fish">Srimath Bhagavat Gita</button>
+        <button mat-menu-item [matMenuTriggerFor]="amphibians">Srimath Bhagavathm</button>
+        <button mat-menu-item [matMenuTriggerFor]="reptiles">Caitanya Charitamritam</button>
+        <button mat-menu-item *ngFor="let book of books">{{book.bookName}}</button>
+      </mat-menu>
+      
+      <mat-menu #invertebrates="matMenu">
+        <button mat-menu-item *ngFor="let article of articles">{{article.serialNo +". "+article.BookName}}</button>
+      </mat-menu>
+      <mat-menu #fish="matMenu" >
+        <button mat-menu-item *ngFor="let Chapter of array">{{Chapter}}</button>
+      </mat-menu>
+      
+      <mat-menu #amphibians="matMenu">
+        <button mat-menu-item *ngFor="let canto of cantos">{{canto}}</button>
+        
+      </mat-menu>
+      
+    
+    <mat-menu #reptiles="matMenu">
+        <button mat-menu-item>Adi Lila</button>
+        <button mat-menu-item>Madhya Lila</button>
+        <button mat-menu-item>Anthya Lila</button>
+      </mat-menu> -->

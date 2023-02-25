@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/angular'; // useful for typechecking
 import {MatDialog} from '@angular/material/dialog';
 import { PopUpEventComponent } from './pop-up-event/pop-up-event.component';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-calender',
@@ -9,6 +10,7 @@ import { PopUpEventComponent } from './pop-up-event/pop-up-event.component';
   styleUrls: ['./calender.component.css']
 })
 export class CalenderComponent implements OnInit {
+
   today = new Date();
   date!:Date;
   weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -50,7 +52,8 @@ export class CalenderComponent implements OnInit {
   eventDate: any;
   dateFormat: string = '';
   eventTitle: any;
-  constructor(public dialog: MatDialog) { 
+  events: any;
+  constructor(public dialog: MatDialog, private api: ApiService) { 
     setInterval(() => {
       this.date = new Date()
     }, 1000)
@@ -61,7 +64,11 @@ export class CalenderComponent implements OnInit {
     this.getDay = this.weekday[this.today.getDay()];
     this.dateFormat = this.today.getFullYear()+"-"+(this.today.getMonth()+1)+"-"+this.today.toDateString().slice(8, 10);
     console.log(this.dateFormat);
-   
+    this.api.getEvents().subscribe({
+      next:((res:any)=>{
+        this.events = res;
+      })
+    })
   }
   handleDateClick(arg:any) {
     // alert('date click! ' + arg.dateStr)

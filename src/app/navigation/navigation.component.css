@@ -52,14 +52,8 @@
 .content-navigators{
   justify-content: space-around;
 }
-::ng-deep .mat-toolbar.mat-primary {
-  background: #6f0404;
-  color: #fff;
-}
-.logo{
-    width: 70px;
-    margin-right: 8px;
-}
+
+
 @media  (min-width: 280px) and (max-width: 420px){
   .image-class{
     width: 25vw;

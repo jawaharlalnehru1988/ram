@@ -25,8 +25,14 @@ export class KirtanDialogComponent implements OnInit {
     this.editdata();
   }
 editdata(){
-  if(this.editData){   
+  if(this.editData && this.editData.routerName === 'arati-songs'){   
     // this.actionBtn = "Update";
+    this.mritangaForm.controls['title'].setValue(this.editData.title);
+    this.mritangaForm.controls['author'].setValue(this.editData.name);
+    this.mritangaForm.controls['youtubeId'].setValue(this.editData.youLink);
+    this.mritangaForm.controls['detail'].setValue(this.editData.timing);
+    
+  } else { 
     this.mritangaForm.controls['title'].setValue(this.editData.title);
     this.mritangaForm.controls['author'].setValue(this.editData.author);
     this.mritangaForm.controls['youtubeId'].setValue(this.editData.youtubeId);

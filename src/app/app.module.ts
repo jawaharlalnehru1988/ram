@@ -48,6 +48,7 @@ import { MritangaComponent } from './kirtan-lesson/mritanga/mritanga.component';
 import { KirtanDialogComponent } from './kirtan-lesson/kirtan-dialog/kirtan-dialog.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
@@ -76,7 +77,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     GuruDetailsComponent,
     AddDialogComponent,
     MritangaComponent,
-    KirtanDialogComponent
+    KirtanDialogComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,

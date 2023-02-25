@@ -22,4 +22,11 @@ return this.http.get<any>("https://drab-gold-fly-yoke.cyclic.app/lessons");
   deleteLesson(id:number){
     return this.http.delete<any>("http://localhost:3000/lessons/"+id);
   }
+
+  getMenus(){
+    return this.http.get<any>('http://localhost:3000/menus');
+  }
+  getEvents(){
+    return this.http.get<any>('http://localhost:3000/eventdetails');
+  }
 }
