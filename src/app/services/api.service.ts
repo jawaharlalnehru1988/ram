@@ -11,7 +11,7 @@ export class ApiService {
     return this.http.post<any>("http://localhost:3000/lessons", data);
   }
   getLesson(){
-return this.http.get<any>("https://drab-gold-fly-yoke.cyclic.app/lessons");
+return this.http.get<any>("https://drab-gold-fly-yoke.cyclic.app/mritangaLessons");
   }
 //   getLesson(){
 // return this.http.get<any>("http://localhost:3000/lessons");
