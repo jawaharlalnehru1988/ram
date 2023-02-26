@@ -11,22 +11,28 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class InfoCollectComponent implements OnInit {
   basicInfoForm!: FormGroup;
+  password1: any;
+  password2: any;
+  hide: boolean = true;
   constructor(private formBuilder: FormBuilder, 
      private httpClient: HttpClient, private router: Router, private dialogRef: MatDialogRef<InfoCollectComponent>) { }
 
   ngOnInit(): void {
     this.basicInfoForm = this.formBuilder.group({
       firstName: ['', Validators.required],
-      emailId: ['', Validators.required],
+      emailId: ['', ],
       mobile: ['', Validators.required],
-      about: ['', Validators.required]
+      about: ['', ],
+      newPwd: ['', Validators.required],
+      confirmPwd: ['', Validators.required]
     })
     
   }
   saveForm(){
     console.log(this.basicInfoForm.value);
-    this.httpClient.post('https://jagannathadasa16.github.io/bookApi/devotee.json', this.basicInfoForm.value).subscribe(res =>{
+    this.httpClient.post('http://localhost:3000/profile', this.basicInfoForm.value).subscribe(res =>{
       console.log(res);
+      alert('Your profile saved successfully')
       this.basicInfoForm.reset();
       // this.router.navigate(['/navigation']);
       this.dialogRef.close();

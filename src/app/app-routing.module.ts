@@ -28,7 +28,7 @@ const routes: Routes = [
   {path: 'guruparampara', component: GuruparamparaComponent},
   {path: 'user/:id', component: GuruDetailsComponent},
   {path: 'kirtan-lesson/mritanga', component: MritangaComponent},
-  {path: 'kirtan-lesson/audio', component: AudioKirtanComponent}
+  {path: 'audiokirtan', component: AudioKirtanComponent}
 ];
 
 @NgModule({

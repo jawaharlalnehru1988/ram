@@ -19,26 +19,28 @@ export class ToolbarComponent implements OnInit {
   constructor(private dialog: MatDialog,  private httpClient: HttpClient, private api: ApiService) { }
 
   ngOnInit(): void {
-  //   this.httpClient.get('https://jagannathadasa16.github.io/bookApi/bookdb.json').subscribe(res=>{
-  // this.articles = res;
-  
-  // })
-  this.api.getMenus().subscribe({
-    next:(res)=>{
-      this.allRouterPath = res
-      console.log(res.map((route:any) => route.routerLink));
+  this.getUserInformation();
+  this.getMenu(); 
+  }
+  getMenu(){
+    this.api.getMenus().subscribe({
+      next:(res)=>{
+        this.allRouterPath = res
+      }, error:(error)=>{
+        alert('some error occured from server')
+      }
+    })
+  }
+ getUserInformation(){
+  this.api.getUserInfo().subscribe({
+    next: (res)=>{
+      console.log(res);
+    }, error: (err)=>{
+      alert('users does not exist');
       
-    }, error:(error)=>{
-      alert('some error occured from server')
     }
   })
-  this.httpClient.get('https://jagannathadasa16.github.io/bookApi/book.json').subscribe(res =>{
-    this.books = res;
-    
-  })
- 
-  }
- 
+ }
   openDialog(){
     
     const dialogRef = this.dialog.open(InfoCollectComponent,{

@@ -7,10 +7,10 @@
         <form action="" [formGroup]="basicInfoForm">
         <p>
             <mat-form-field appearance="outline">
-              <mat-label>First Name</mat-label>
+              <mat-label>Your Legal Name Or Initiated Name</mat-label>
               <input formControlName="firstName" matInput placeholder="Give your first Name">
-              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-              <mat-hint>Hint</mat-hint>
+              <mat-icon matSuffix>person</mat-icon>
+              <mat-hint>Type Your Complete Name</mat-hint>
             </mat-form-field>
           </p>
           <p>
@@ -18,15 +18,15 @@
               <mat-label>Email Id</mat-label>
               <input formControlName="emailId" matInput placeholder="Give your Email Id">
               <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-              <mat-hint>Hint</mat-hint>
+              <mat-hint>mail</mat-hint>
             </mat-form-field>
           </p>
           <p>
             <mat-form-field appearance="outline">
               <mat-label>Mobile Number</mat-label>
               <input formControlName="mobile" matInput placeholder="Give your Mobile">
-              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-              <mat-hint>Hint</mat-hint>
+              <mat-icon matSuffix>add_call</mat-icon>
+              <mat-hint>need to give</mat-hint>
             </mat-form-field>
           </p>
           <p>
@@ -34,7 +34,27 @@
               <mat-label> Tell something about you</mat-label>
               <input formControlName="about" matInput placeholder="Tell something about you">
               <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-              <mat-hint>Hint</mat-hint>
+              <mat-hint>optional</mat-hint>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label> create your password</mat-label>
+              <input type="password" [type]="hide ? 'password1' : 'text'" [(ngModel)]="password1" formControlName="newPwd" matInput placeholder="give strong password">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="hide ? 'Hide password' : 'Show password'">
+                <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+              </button>
+              <mat-hint>Let your password be with min 8 character</mat-hint>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label> confirm your password</mat-label>
+              <input type="password"  formControlName="confirmPwd" [type]="hide ? 'password2' : 'text'" [(ngModel)]="password2"  matInput placeholder="give strong password">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="hide ? 'Hide password' : 'Show password'">
+                <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+              </button>
+              <mat-hint>Let your password be with min 8 character</mat-hint>
             </mat-form-field>
           </p>
         </form>

@@ -33,4 +33,10 @@ return this.http.get<any>("https://drab-gold-fly-yoke.cyclic.app/mritangaLessons
   getEvents(){
     return this.http.get<any>('http://localhost:3000/eventdetails');
   }
+  getUserInfo(){
+    return this.http.get<any>('http://localhost:3000/profile');
+  }
+  getAudio(){
+    return this.http.get<any>('http://localhost:3000/audioKirtans')
+  }
 }

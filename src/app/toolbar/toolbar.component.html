@@ -3,12 +3,13 @@
         <button mat-icon-button [matMenuTriggerFor]="animals" aria-label="Example icon-button with menu icon">
           <mat-icon>menu</mat-icon>
         </button>
+        <button mat-button routerLink="" ><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home">home</mat-icon>முதல் பக்கம்</button>
         <div fxLayout fxLayoutAlign="center center"><img src="assets/images/logo.jpg" class="logo" alt="">ISKCON Kanyakumari</div>
         
         
       <div class="example-icon">
         <button mat-icon-button (click)="openDialog()">
-          Sign In
+          Sign Up
         </button>
       </div>
       </mat-toolbar>
@@ -16,7 +17,7 @@
     
     <mat-menu #animals="matMenu" >
         <div *ngFor="let route of allRouterPath">
-            <button mat-menu-item class="toolBtn" [routerLink]="route.routerLink">{{route.routerPath}}</button>
+            <button mat-menu-item class="toolBtn" [matTooltip]="route.routerPath" [routerLink]="route.routerLink">{{route.routerPath}}</button>
 
         </div>
         
