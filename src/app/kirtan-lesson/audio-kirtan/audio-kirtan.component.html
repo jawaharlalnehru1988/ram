@@ -1,10 +1,8 @@
-<audio controls>
-    <source src="https://drive.google.com/uc?export=dowload&id=1LV4RigJYPYEsoomlM0bECGSemaW25ioh" type="audio/mpeg">
-  </audio>
+
 <button mat-button (click)="openDialog()">Add Kirtan</button>
   
   <!-- table is going to be here -->
- <!-- <div class="container mt-5">
+ <div class="container mt-5">
   <mat-form-field>
     <mat-label>Filter</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
@@ -14,41 +12,41 @@
     <table mat-table [dataSource]="dataSource" matSort>
   
       
-            <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> S.No </th>
+            <!-- <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>வரிசை எண்</th>
         <td mat-cell *matCellDef="let row"> {{row.id}} </td>
-      </ng-container>
+      </ng-container> -->
   
-      
+<!--       
       <ng-container matColumnDef="title">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Lessons </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>தலைப்பு</th>
         <td mat-cell *matCellDef="let row"> {{row.title}} </td>
       </ng-container>
   
       
-      <ng-container matColumnDef="author">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Author Name </th>
-        <td mat-cell *matCellDef="let row"> {{row.author}} </td>
-      </ng-container>
+      <ng-container matColumnDef="singar">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>பாடியவர்</th>
+        <td mat-cell *matCellDef="let row"> {{row.singar}} </td>
+      </ng-container> -->
   
      
-      <ng-container matColumnDef="youtubeId">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> video </th>
-        <td mat-cell *matCellDef="let row"><youtube-player [videoId]="row.youtubeId" [playerVars]="playerVars" (ready)="savePlayer($event)"></youtube-player> </td>
+      <ng-container matColumnDef="audioLink">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>ஆடியோ</th>
+        <td mat-cell *matCellDef="let row">
+            
+            <p><span class="sNo">{{row.id}}</span> தலைப்பு : {{row.title}}</p>
+            <p>பாடியவர் : {{row.singar}}</p>
+            <audio controls><source [src]="row.audioLink" type="audio/mpeg"></audio> 
+        </td>
       </ng-container>
 
-     
-      <ng-container matColumnDef="detail">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
-        <td mat-cell *matCellDef="let row"> {{row.detail}} </td>
-      </ng-container>
-      <ng-container matColumnDef="action">
+      <!-- <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
         <td mat-cell *matCellDef="let row"> 
             <button mat-icon-button color="primary" (click)="editLesson(row)"><mat-icon>edit</mat-icon> </button>
             <button mat-icon-button color="warn" (click)="delete(row)" ><mat-icon>delete</mat-icon> </button></td>
         
-      </ng-container>
+      </ng-container> -->
       
   
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -63,4 +61,4 @@
     <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
   </div>
   
-</div>  -->
+</div> 

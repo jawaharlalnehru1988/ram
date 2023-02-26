@@ -1,0 +1,26 @@
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+    padding: 8px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border: 1px solid #64649d;
+}
+th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
+    padding-right: 24px;
+    font-size: 16px;
+    font-weight: 900;
+}
+th{
+    color: white;
+    font-weight: 800;
+    background-color: cadetblue;
+}
+.sNo{
+    font-size: 14px;
+    font-weight: 900;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: cadetblue;
+    padding: 6px;
+    border: 2px solid #256769;
+}
