@@ -49,6 +49,7 @@ import { KirtanDialogComponent } from './kirtan-lesson/kirtan-dialog/kirtan-dial
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { AudioKirtanComponent } from './kirtan-lesson/audio-kirtan/audio-kirtan.component';
 
 
 
@@ -79,7 +80,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     AddDialogComponent,
     MritangaComponent,
     KirtanDialogComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    AudioKirtanComponent
   ],
   imports: [
     BrowserModule,

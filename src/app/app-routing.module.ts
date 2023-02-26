@@ -8,6 +8,7 @@ import { BooksComponent } from './books/books.component';
 import { CalenderComponent } from './calender/calender.component';
 import { ImagesComponent } from './images/images.component';
 import { JapaComponent } from './japa/japa.component';
+import { AudioKirtanComponent } from './kirtan-lesson/audio-kirtan/audio-kirtan.component';
 import { KirtanLessonComponent } from './kirtan-lesson/kirtan-lesson.component';
 import { MritangaComponent } from './kirtan-lesson/mritanga/mritanga.component';
 import { FooterComponent } from './navigation/footer/footer.component';
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path: 'arati-songs', component: AratiSongsComponent},
   {path: 'guruparampara', component: GuruparamparaComponent},
   {path: 'user/:id', component: GuruDetailsComponent},
-  {path: 'kirtan-lesson/mritanga', component: MritangaComponent}
+  {path: 'kirtan-lesson/mritanga', component: MritangaComponent},
+  {path: 'kirtan-lesson/audio', component: AudioKirtanComponent}
 ];
 
 @NgModule({

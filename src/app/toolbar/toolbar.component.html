@@ -16,7 +16,7 @@
     
     <mat-menu #animals="matMenu" >
         <div *ngFor="let route of allRouterPath">
-            <button mat-menu-item  [routerLink]="route.routerLink">{{route.routerPath}}</button>
+            <button mat-menu-item class="toolBtn" [routerLink]="route.routerLink">{{route.routerPath}}</button>
 
         </div>
         
