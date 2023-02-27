@@ -11,7 +11,9 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class InfoCollectComponent implements OnInit {
   basicInfoForm!: FormGroup;
+  loginForm!: FormGroup;
   password1: any;
+  login: string = "login"
   password2: any;
   hide: boolean = true;
   constructor(private formBuilder: FormBuilder, 
@@ -26,7 +28,13 @@ export class InfoCollectComponent implements OnInit {
       newPwd: ['', Validators.required],
       confirmPwd: ['', Validators.required]
     })
-    
+    this.loginFormField();
+  }
+  loginFormField(){
+    this.loginForm = this.formBuilder.group({
+      loginemailId: ['', Validators.required],
+      loginPwd: ['', Validators.required]
+    })
   }
   saveForm(){
     console.log(this.basicInfoForm.value);

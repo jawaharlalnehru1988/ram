@@ -63,3 +63,25 @@
             <button mat-raised-button color="primary" (click)="saveForm()"> Submit</button>
         </mat-dialog-actions>
 </div>
+<div *ngIf="login">
+  <form [formGroup]="loginForm">
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter Your Email Id</mat-label>
+      <input formControlName="loginemailId" matInput placeholder="Give your Email Id">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>mail</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label> Enter your password</mat-label>
+      <input type="password" [type]="hide ? 'password1' : 'text'" [(ngModel)]="password1" formControlName="loginPwd" matInput placeholder="give strong password">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="hide ? 'Hide password' : 'Show password'">
+        <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+      <mat-hint>Let your password be with min 8 character</mat-hint>
+    </mat-form-field>
+  </p>
+</form>
+</div>

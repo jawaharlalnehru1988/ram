@@ -21,4 +21,7 @@
     .nameOfSite{
         display: none !important;
     }
+    .signup{
+        margin-right: 16px;
+    }
 }
