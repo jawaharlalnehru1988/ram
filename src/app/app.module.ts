@@ -50,6 +50,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { AudioKirtanComponent } from './kirtan-lesson/audio-kirtan/audio-kirtan.component';
+import { LoginComponent } from './info-collect/login/login.component';
 
 
 
@@ -81,7 +82,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MritangaComponent,
     KirtanDialogComponent,
     ToolbarComponent,
-    AudioKirtanComponent
+    AudioKirtanComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

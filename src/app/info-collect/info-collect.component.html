@@ -17,8 +17,8 @@
             <mat-form-field appearance="outline">
               <mat-label>Email Id</mat-label>
               <input formControlName="emailId" matInput placeholder="Give your Email Id">
-              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-              <mat-hint>mail</mat-hint>
+              <mat-icon matSuffix>mail</mat-icon>
+              <mat-hint>Give your mail id</mat-hint>
             </mat-form-field>
           </p>
           <p>
@@ -27,14 +27,6 @@
               <input formControlName="mobile" matInput placeholder="Give your Mobile">
               <mat-icon matSuffix>add_call</mat-icon>
               <mat-hint>need to give</mat-hint>
-            </mat-form-field>
-          </p>
-          <p>
-            <mat-form-field appearance="outline">
-              <mat-label> Tell something about you</mat-label>
-              <input formControlName="about" matInput placeholder="Tell something about you">
-              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-              <mat-hint>optional</mat-hint>
             </mat-form-field>
           </p>
           <p>
@@ -58,30 +50,9 @@
             </mat-form-field>
           </p>
         </form>
+        <button mat-button (click)="openSignIn()">Already a User? Click to Sign in!!</button>
         <mat-dialog-actions align="end">
             <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
-            <button mat-raised-button color="primary" (click)="saveForm()"> Submit</button>
+            <button mat-raised-button color="primary" (click)="saveForm()"> Sign Up</button>
         </mat-dialog-actions>
-</div>
-<div *ngIf="login">
-  <form [formGroup]="loginForm">
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Enter Your Email Id</mat-label>
-      <input formControlName="loginemailId" matInput placeholder="Give your Email Id">
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-      <mat-hint>mail</mat-hint>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label> Enter your password</mat-label>
-      <input type="password" [type]="hide ? 'password1' : 'text'" [(ngModel)]="password1" formControlName="loginPwd" matInput placeholder="give strong password">
-      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="hide ? 'Hide password' : 'Show password'">
-        <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
-      </button>
-      <mat-hint>Let your password be with min 8 character</mat-hint>
-    </mat-form-field>
-  </p>
-</form>
 </div>

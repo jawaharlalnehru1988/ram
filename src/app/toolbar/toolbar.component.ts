@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { InfoCollectComponent } from '../info-collect/info-collect.component';
+import { LoginComponent } from '../info-collect/login/login.component';
 import { ApiService } from '../services/api.service';
 
 @Component({
@@ -48,5 +49,10 @@ export class ToolbarComponent implements OnInit {
       disableClose: true
     })
 }
-
+openLoginForm(){
+  const dialogRef = this.dialog.open(LoginComponent, {
+    width: '450px',
+    disableClose: true
+  })
+}
 }

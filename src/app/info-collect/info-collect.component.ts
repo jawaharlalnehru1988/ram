@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { LoginComponent } from './login/login.component';
 
 @Component({
   selector: 'app-info-collect',
@@ -11,31 +12,25 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class InfoCollectComponent implements OnInit {
   basicInfoForm!: FormGroup;
-  loginForm!: FormGroup;
   password1: any;
   login: string = "login"
   password2: any;
   hide: boolean = true;
-  constructor(private formBuilder: FormBuilder, 
+
+  constructor(private formBuilder: FormBuilder, private dialog: MatDialog,
      private httpClient: HttpClient, private router: Router, private dialogRef: MatDialogRef<InfoCollectComponent>) { }
 
   ngOnInit(): void {
     this.basicInfoForm = this.formBuilder.group({
       firstName: ['', Validators.required],
-      emailId: ['', ],
-      mobile: ['', Validators.required],
+      emailId: ['', Validators.required],
+      mobile: ['', ],
       about: ['', ],
       newPwd: ['', Validators.required],
       confirmPwd: ['', Validators.required]
     })
-    this.loginFormField();
   }
-  loginFormField(){
-    this.loginForm = this.formBuilder.group({
-      loginemailId: ['', Validators.required],
-      loginPwd: ['', Validators.required]
-    })
-  }
+  
   saveForm(){
     console.log(this.basicInfoForm.value);
     this.httpClient.post('http://localhost:3000/profile', this.basicInfoForm.value).subscribe(res =>{
@@ -44,10 +39,17 @@ export class InfoCollectComponent implements OnInit {
       this.basicInfoForm.reset();
       // this.router.navigate(['/navigation']);
       this.dialogRef.close();
+      this.openSignIn();
     }),
     (error: any) =>{
       console.log(error);
-      
+      alert('something went wrong')
     }
+  }
+  openSignIn(){
+    this.dialog.open(LoginComponent,{
+      width: "450px",
+      disableClose: true
+    })
   }
 }

@@ -1,0 +1,31 @@
+<div>
+    <div class="d-flex justify-content-between">
+        <h2>Login with your Email id and password</h2>
+        <a href="" mat-dialog-close> <mat-icon><span class="material-symbols-rounded">close </span></mat-icon> </a>
+    </div>
+    <form [formGroup]="loginForm">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Enter Your Email Id</mat-label>
+        <input formControlName="loginemailId" matInput placeholder="Give your Email Id">
+        <mat-icon matSuffix>mail</mat-icon>
+        <mat-hint>Give your mail id</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label> Enter your password</mat-label>
+        <input type="password" [type]="hide ? 'password1' : 'text'" [(ngModel)]="password1" formControlName="loginPwd" matInput placeholder="give strong password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="hide ? 'Hide password' : 'Show password'">
+          <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+        <mat-hint>Let your password be with min 8 character</mat-hint>
+      </mat-form-field>
+    </p>
+  </form>
+  <button mat-button (click)="openSignUp()">New User? Click To Sign Up!!</button>
+  <mat-dialog-actions align="end">
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" (click)="saveForm()"> Sign In</button>
+</mat-dialog-actions>
+  </div>
