@@ -39,4 +39,10 @@ return this.http.get<any>("https://drab-gold-fly-yoke.cyclic.app/mritangaLessons
   getAudio(){
     return this.http.get<any>('https://drab-gold-fly-yoke.cyclic.app/audioKirtans')
   }
+  isLoggedIn(){
+    return sessionStorage.getItem('username')!= null;
+  }
+  getUserRole(){
+    return sessionStorage.getItem('userrole')!=null;
+  }
 }

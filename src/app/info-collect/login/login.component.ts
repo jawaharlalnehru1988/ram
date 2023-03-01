@@ -35,6 +35,10 @@ this.api.getUserInfo().subscribe({
     });
     if (user) {
       alert('You have Logged in successfully');
+      console.log(user);
+      
+      sessionStorage.setItem("username", user.firstName);
+      sessionStorage.setItem("userrole", user.role);
       this.loginForm.reset();
       this.dialogRef.close();
       this.router.navigate(['']);
