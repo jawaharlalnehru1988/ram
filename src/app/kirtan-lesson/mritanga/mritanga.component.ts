@@ -13,6 +13,7 @@ import {MatTableDataSource} from '@angular/material/table';
   styleUrls: ['./mritanga.component.css']
 })
 export class MritangaComponent implements OnInit {
+  isVideoLoading :any;
   displayedColumns: string[] = ['id', 'title', 'author', 'youtubeId', 'detail', 'action'];
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -48,13 +49,13 @@ export class MritangaComponent implements OnInit {
    })
   }
   getAllLessons(){
+    this.isVideoLoading = true;
     this.api.getLesson().subscribe({
       next:(response)=>{
         this.mritangaLessons = response;
         this.dataSource = new MatTableDataSource(response);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
-        // this.loading = true;
       },
       error:()=>{
         console.log('some error occures');
@@ -81,8 +82,9 @@ export class MritangaComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  savePlayer(player:any){
+  savePlayer(player:any){    
     this.player = player;
+    this.isVideoLoading = false;
     }
     delete(row:any){
 this.api.deleteLesson(row.id).subscribe({
