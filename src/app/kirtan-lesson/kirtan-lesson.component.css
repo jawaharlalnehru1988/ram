@@ -1,19 +1,28 @@
-.video-div{
-    border: 1px solid yellow;
-    padding: 3px;
+.example-card {
+  max-width: 400px;
 }
-strong{
-    font-size: 20px;
+
+mat-form-field{
+  width: 100%;
 }
-.example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
+.mat-card {
+  padding: 6px;
+  margin: 4px;
+  text-align: center;
+  background-color: #e1f476;
+  box-shadow: 0px 0px 20px 2px rgb(128, 119, 0);
+}
+.mat-card-header .mat-card-subtitle:not(:first-child) {
+  margin-top: -8px;
+  font-weight: 700;
+}
+.mat-card>.mat-card-actions:last-child {
   
-  .example-full-width {
-    width: 100%;
-  }
-  textarea{
-    height: 20vh;
-  }
+  background-color: #030300d6;
+  /* color: white; */
+}
+.example-header-image {
+  /* background-image: url('../../../assets/images/srilaprabhupada.png'); */
+  background-image: url('../../assets/images/srilaprabhupada.png');
+  background-size: cover;
+}

@@ -32,6 +32,10 @@ lessons:any;
 playerVars ={
   cc_lang_pref:"en"
 }
+toggleFullText() {
+  this.showFullText = !this.showFullText;
+}
+showFullText = false;
 player:any;
 dateToday: string = '';
   name: string = "";
@@ -54,5 +58,8 @@ this.player.playVideo();
 }
 pauseVideo(){
 this.player.pauseVideo();
+}
+formatText(text: any) {
+  return text.replace(/\n/g, '<br>');
 }
 }

@@ -16,12 +16,19 @@ export class ToolbarComponent implements OnInit {
   array: any;
   cantos: any;
   allRouterPath: any;
+  userName: any;
+  userRole: any;
 
   constructor(private dialog: MatDialog,  private httpClient: HttpClient, private api: ApiService) { }
 
   ngOnInit(): void {
   this.getUserInformation();
   this.getMenu(); 
+  this.getSessionStrogeValue();
+  }
+  getSessionStrogeValue(){
+    this.userRole = sessionStorage.getItem('userrole');
+    this.userName = sessionStorage.getItem('username');
   }
   getMenu(){
     this.api.getMenus().subscribe({

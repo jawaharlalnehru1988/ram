@@ -1,27 +1,25 @@
-<div class="nav-bar">
+<div class="nav-bar navigationBar">
     <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between">
+      <div>
+
         <button mat-icon-button [matMenuTriggerFor]="animals" aria-label="Example icon-button with menu icon">
           <mat-icon>menu</mat-icon>
         </button>
         <button mat-button routerLink="" ><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home">home</mat-icon></button>
+      </div>
         <div fxLayout class="nameOfSite" fxLayoutAlign="center center"><img src="assets/images/logo.jpg" class="logo" alt="">ISKCON Kanyakumari</div>
-        
-        
       <div class="example-icon">
-        <button mat-icon-button class="signup" (click)="openDialog()">
+        <button mat-icon-button class="signup" [ngStyle]="{ 'display': userName ? 'none' : 'block' }" (click)="openDialog()">
           Sign Up
         </button>
-        <button mat-icon-button (click)="openLoginForm()">
+        <button mat-icon-button class="signup" [ngStyle]="{ 'display': userName ? 'none' : 'block' }" (click)="openLoginForm()">
           Sign in
         </button>
-        <button mat-icon-button routerLink="">
+        <button class="signup" mat-icon-button routerLink="">
           Sign Out
         </button>
-        
       </div>
       </mat-toolbar>
-    </div>
-    
     <mat-menu #animals="matMenu" >
         <div *ngFor="let route of allRouterPath">
             <button mat-menu-item class="toolBtn" [matTooltip]="route.routerPath" [routerLink]="route.routerLink">{{route.routerPath}}</button>
@@ -29,6 +27,7 @@
         </div>
         
       </mat-menu>
+    </div>
       <!-- <mat-menu #vertebrates="matMenu">
         <button mat-menu-item [matMenuTriggerFor]="fish">Srimath Bhagavat Gita</button>
         <button mat-menu-item [matMenuTriggerFor]="amphibians">Srimath Bhagavathm</button>

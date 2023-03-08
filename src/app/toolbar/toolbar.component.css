@@ -2,6 +2,14 @@
     width: 70px;
     margin-right: 8px;
 }
+.navigationBar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
 ::ng-deep .mat-toolbar.mat-primary {
     background: #6f0404;
     color: #fff;
