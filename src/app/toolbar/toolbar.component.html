@@ -9,13 +9,14 @@
       </div>
         <div fxLayout class="nameOfSite" fxLayoutAlign="center center"><img src="assets/images/logo.jpg" class="logo" alt="">ISKCON Kanyakumari</div>
       <div class="example-icon">
+        <p class="signup pt-1">{{userName}}</p>
         <button mat-icon-button class="signup" [ngStyle]="{ 'display': userName ? 'none' : 'block' }" (click)="openDialog()">
           Sign Up
         </button>
         <button mat-icon-button class="signup" [ngStyle]="{ 'display': userName ? 'none' : 'block' }" (click)="openLoginForm()">
           Sign in
         </button>
-        <button class="signup" [ngStyle]="{ 'display': !userName ? 'none' : 'block' }" mat-icon-button routerLink="">
+        <button class="signup" (click)="signOut()" [ngStyle]="{ 'display': !userName ? 'none' : 'block' }" mat-icon-button routerLink="">
           Sign Out
         </button>
       </div>

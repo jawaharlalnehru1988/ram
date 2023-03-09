@@ -61,5 +61,12 @@ openLoginForm(){
     width: '450px',
     disableClose: true
   })
+  dialogRef.afterClosed().subscribe(res =>{
+    location.reload();
+  })
+}
+signOut(){
+  sessionStorage.clear();
+  this.ngOnInit();
 }
 }

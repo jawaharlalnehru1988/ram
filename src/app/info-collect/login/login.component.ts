@@ -37,7 +37,6 @@ this.api.getUserInfo().subscribe({
     if (user) {
       alert('You have Logged in successfully');
       this.userDetails = user;
-      
       sessionStorage.setItem("username", user.firstName);
       sessionStorage.setItem("userrole", user.role);
       this.loginForm.reset();
