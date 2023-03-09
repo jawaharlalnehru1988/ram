@@ -35,7 +35,7 @@ export class ToolbarComponent implements OnInit {
       next:(res)=>{
         this.allRouterPath = res
       }, error:(error)=>{
-        alert('some error occured from server')
+        alert('some error occured from server, please connect with the internet')
       }
     })
   }

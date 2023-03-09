@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   hide: boolean = true;
   password1: any;
+  userDetails: any;
   constructor(public formBuilder: FormBuilder, private dialog: MatDialog, private dialogRef: MatDialogRef<LoginComponent>, private api: ApiService, private router: Router) { }
 
   ngOnInit(): void {
@@ -35,7 +36,7 @@ this.api.getUserInfo().subscribe({
     });
     if (user) {
       alert('You have Logged in successfully');
-      console.log(user);
+      this.userDetails = user;
       
       sessionStorage.setItem("username", user.firstName);
       sessionStorage.setItem("userrole", user.role);

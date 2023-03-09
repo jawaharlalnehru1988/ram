@@ -15,7 +15,7 @@
         <button mat-icon-button class="signup" [ngStyle]="{ 'display': userName ? 'none' : 'block' }" (click)="openLoginForm()">
           Sign in
         </button>
-        <button class="signup" mat-icon-button routerLink="">
+        <button class="signup" [ngStyle]="{ 'display': !userName ? 'none' : 'block' }" mat-icon-button routerLink="">
           Sign Out
         </button>
       </div>

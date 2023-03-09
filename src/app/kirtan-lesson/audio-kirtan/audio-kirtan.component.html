@@ -1,4 +1,5 @@
 
+<div class="allContent">
 <button mat-button (click)="openDialog()">Add Kirtan</button>
   
   <!-- table is going to be here -->
@@ -11,44 +12,14 @@
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
   
-      
-            <!-- <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>வரிசை எண்</th>
-        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
-      </ng-container> -->
-  
-<!--       
-      <ng-container matColumnDef="title">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>தலைப்பு</th>
-        <td mat-cell *matCellDef="let row"> {{row.title}} </td>
-      </ng-container>
-  
-      
-      <ng-container matColumnDef="singar">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>பாடியவர்</th>
-        <td mat-cell *matCellDef="let row"> {{row.singar}} </td>
-      </ng-container> -->
-  
-     
       <ng-container matColumnDef="audioLink">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>ஆடியோ</th>
         <td mat-cell *matCellDef="let row">
-            
             <p><span class="sNo">{{row.id}}</span> தலைப்பு : {{row.title}}</p>
             <p>பாடியவர் : {{row.singar}}</p>
             <audio controls><source [src]="row.audioLink" type="audio/mpeg"></audio> 
         </td>
-      </ng-container>
-
-      <!-- <ng-container matColumnDef="action">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
-        <td mat-cell *matCellDef="let row"> 
-            <button mat-icon-button color="primary" (click)="editLesson(row)"><mat-icon>edit</mat-icon> </button>
-            <button mat-icon-button color="warn" (click)="delete(row)" ><mat-icon>delete</mat-icon> </button></td>
-        
-      </ng-container> -->
-      
-  
+      </ng-container> 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   
@@ -62,3 +33,4 @@
   </div>
   
 </div> 
+</div>
