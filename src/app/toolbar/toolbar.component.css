@@ -10,6 +10,9 @@
     transition: top 0.3s;
 }
 
+.nav-bar{
+    box-shadow: 0px 2px 14px 2px #a76c6c;
+  }
 ::ng-deep .mat-toolbar.mat-primary {
     background: #6f0404;
     color: #fff;

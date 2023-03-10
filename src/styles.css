@@ -26,7 +26,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     transform: translate(-50%, -50%);
   }
   .allContent {
-    margin-top: 50px; /* adjust the value as needed */
+    margin-top: 64px; /* adjust the value as needed */
   }
   
   @media (max-width: 520px) {

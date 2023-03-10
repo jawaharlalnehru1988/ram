@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AratiSongsComponent } from './arati-songs/arati-songs.component';
+import { FestivalComponent } from './arati-songs/festival/festival.component';
 import { GuruDetailsComponent } from './article/srila-prabhupada/guru-details/guru-details.component';
 import { GuruparamparaComponent } from './article/srila-prabhupada/guruparampara/guruparampara.component';
 import { SrilaPrabhupadaComponent } from './article/srila-prabhupada/srila-prabhupada.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'books', component: BooksComponent},
   {path: 'images', component: ImagesComponent},
   {path: 'arati-songs', component: AratiSongsComponent},
+  {path: 'festival', component: FestivalComponent},
   {path: 'guruparampara', component: GuruparamparaComponent},
   {path: 'user/:id', component: GuruDetailsComponent},
   {path: 'kirtan-lesson/mritanga', component: MritangaComponent},

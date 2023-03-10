@@ -1,12 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-
+  observeFestival = new Subject<any>();
+ festivalArati$ = this.observeFestival.asObservable();
   constructor(private http : HttpClient) { }
+receiveArati(message: any){
+this.observeFestival.next(message);
+}
+
   postLesson(data:any){
     return this.http.post<any>("http://localhost:3000/lessons", data);
   }

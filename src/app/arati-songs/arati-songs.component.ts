@@ -28,6 +28,15 @@ export class AratiSongsComponent implements OnInit {
 
     );
   }
+  ngAfterViewInit(){
+    this.recieveMessage();
+  }
+  recieveMessage(){
+    this.api.festivalArati$.subscribe(res =>{
+      console.log(res);
+      
+    })
+  }
   savePlayer(player:any){
     this.player = player;
     }
