@@ -5,12 +5,11 @@
     background-size: 20px;
 }
 .mahaMantra{
-font-weight: bolder;
 text-shadow: 0px 0px 2px black;
-background-color: #ffffff75;
-border: 3px solid burlywood;
+font-weight: 900;
 text-align: center;
 color: #3b046e;
+line-height: 7px;
 }
 .malaCount{
     display: flex;
@@ -26,6 +25,8 @@ color: #3b046e;
     padding: 8px;
     border-radius: 8px;
     color: white;
+    font-size: 12px;
+    text-align: center;
 }
 .SideLine{
     border-right: 2px solid blue;
@@ -35,13 +36,16 @@ color: #3b046e;
     background-color: yellow;
     width: 150px;
     font-size: 25px;
-    height: 50px;
+    height: 28px;
     color: rgb(104, 2, 2);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 15px;
     border: 2px solid brown;
+}
+.mat-raised-button{
+    line-height: 20px !important;
 }
 ::ng-deep .mat-fab{
     width: 100px !important;
@@ -73,6 +77,7 @@ mat-button-toggle.play_button{
     margin-top: 10px;
     padding: 8px;
     border-radius: 8px;
+    font-size: 8px;
 }
 ::ng-deep .mat-button-toggle-standalone.mat-button-toggle-appearance-standard, .mat-button-toggle-group-appearance-standard {
     border-radius: 4px;

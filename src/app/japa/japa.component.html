@@ -14,50 +14,24 @@
         <div class="malaCount SideLine">
             <p class="malaTitle">மாலை எண்ணிக்கை</p> 
             <p class="malaCoutArea">{{malaCounting}}</p>
-            <button mat-raised-button color="warn" (click)="reset16Count()">முதலிலிருந்து <br>மாலை</button>
+            <button mat-raised-button color="warn" (click)="reset16Count()">முதலிலிருந்து மாலை</button>
         </div>
     
         <div class="malaCount">
-         <p class="malaTitle">மணி  எண்ணிக்கை</p>
+         <p class="malaTitle">மணி எண்ணிக்கை</p>
          <p class="malaCoutArea">{{beatCounting}}</p>
-         <button mat-raised-button color="warn" (click)="resetIncreaseCount()">முதலிலிருந்து <br>மணி</button>
+         <button mat-raised-button color="warn" (click)="resetIncreaseCount()">முதலிலிருந்து மணி</button>
         </div>
     </div>
     <div fxLayoutAlign.lt-sm="center center" fxLayout="column">
         <p class="japa-indicate"> கீழே உள்ள பட்டனை கிளிக் செய்து உங்களுடைய ஜபத்தை  ஆரம்பிக்கவும்  </p>
-        <button mat-fab color="accent" class="chant-count" (click)="increaseCount()"><span>{{beatCounting || count}}</span></button>
-    </div>
-    </div>
-   <!--  <div fxLayoutAlign="center" fxLayout.lt-sm="column">
-        <div fxLayoutAlign="center">
+        <p class="japa-indicate"> <mat-checkbox (change)="srilaPrabhu($event.checked)" > ஸ்ரீல பிரபுபாதருடன் ஜபம் செய்ய</mat-checkbox> </p>
+        <button mat-raised-button (click)="increaseSpeed()">Increase Speed</button>
+<button mat-raised-button (click)="decreaseSpeed()">Decrease Speed</button>
 
-            <mat-button-toggle-group type="button" #toggle >
-                <mat-button-toggle (change)="openKirtan($event)">
-                    click here for single raised chant
-                </mat-button-toggle>
-            </mat-button-toggle-group>
-           <button  class="play_button" mat-raised-button  (click)="openfile()">
-               <p> பிரபுபாதருடன் ஜபம் செய்ய</p> 
-                   <p> இங்கே கிளிக் செய்யவும் </p>
-            </button>
-        </div>
-        <div fxLayoutAlign="center">
-            <span>Volume</span>
-            <input type="range" min="0" max="1" step="0.01" value="0.5" (input)="setVolume($event)">
-        </div>
-   
-     <div class="chant" (click)="openfile()">Chant with prabhupada</div> 
-   
-    <div fxLayoutAlign="center">
-        <span>{{currentTime}}</span>
-        <input type="range" min="0" max="637" [value]="seek" (play)="playEvent(currentTime)">
-        <span>{{duration}}</span>
+        <button mat-fab color="accent" class="chant-count"  [disabled]="isPlaying" (click)="increaseCount()"><span>{{beatCounting || count}}</span></button>
     </div>
-      <div fxLayoutAlign="center">
-        <button mat-button class="play" (click)="play()">play</button>
-        <button mat-button class="pause" (click)="pause()">pause</button>
-        <button mat-button class="stop" (click)="stop()">stop</button>
-      </div>
-    </div>-->
+    </div>
+   
     
   

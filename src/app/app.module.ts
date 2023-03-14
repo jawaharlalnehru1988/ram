@@ -52,7 +52,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { AudioKirtanComponent } from './kirtan-lesson/audio-kirtan/audio-kirtan.component';
 import { LoginComponent } from './info-collect/login/login.component';
 import { FestivalComponent } from './arati-songs/festival/festival.component';
-
+import {MatCheckboxModule} from '@angular/material/checkbox'; 
 
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
@@ -113,6 +113,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     HttpClientModule,
     FlexLayoutModule,
     FullCalendarModule,
+    MatCheckboxModule,
     NgxYoutubePlayerModule.forRoot()
   ],
   providers: [],
