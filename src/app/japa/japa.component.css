@@ -1,7 +1,8 @@
 
 .body{
     padding: 16px;
-    background-image: url(../../assets/images/tilak.png);
+    /* background-image: url(../../assets/images/tilak.png); */
+    background-color: burlywood;
     background-size: 20px;
 }
 .mahaMantra{
@@ -53,6 +54,7 @@ line-height: 7px;
 }
 .chant-count{
     font-size: 25px;
+    background-color: green;
 }
 mat-button-toggle.play_button{
     width: 60%;

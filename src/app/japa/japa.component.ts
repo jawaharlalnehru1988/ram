@@ -23,6 +23,7 @@ export class JapaComponent implements OnInit {
   prabhuVoiceEnabled: any;
   isPlaying = false;
   audio!: HTMLAudioElement;
+  isTickChecked: any;
   constructor() { }
 
   ngOnInit(): void {
@@ -30,12 +31,22 @@ export class JapaComponent implements OnInit {
   }
 
   increaseCount(){
+    if(this.isTickChecked === true){
+      let tick = new Audio();
+      tick.src = '../assets/mp3/tick.mp3';
+      tick.load();
+      tick.play();
+    } else {
+      console.log("டிக் சப்தம் வேண்டுமா ?");
+      
+    }
     this.beatCounting += 1;
     if(this.beatCounting === 108){
     this.oneHundredEight();
     }
     if(this.prabhuVoiceEnabled === true){
     this.openKirtan();
+   
     }
   }
   resetIncreaseCount(){
@@ -47,6 +58,10 @@ export class JapaComponent implements OnInit {
     if(this.malaCounting === 16){
       this.every16count();
     }
+    let bell = new Audio();
+    bell.src = '../assets/mp3/bell.mp3';
+    bell.load();
+    bell.play();
   }
   reset16Count(){
     this.malaCounting = 0;
@@ -59,7 +74,6 @@ export class JapaComponent implements OnInit {
     this.sixteenMalaCount = 0;
   }
   srilaPrabhu(isChecked:any){
-console.log("isChecked", isChecked);
 if (isChecked === true) {
   this.prabhuVoiceEnabled = true;;
 } else {
@@ -86,6 +100,10 @@ if (isChecked === true) {
     if (this.audio) {
       this.audio.playbackRate -= 0.1;
     }
+  }
+  tickSound(action:any){
+    this.isTickChecked = action;
+    
   }
 }
 

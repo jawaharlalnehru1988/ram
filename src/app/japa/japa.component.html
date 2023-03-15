@@ -23,14 +23,26 @@
          <button mat-raised-button color="warn" (click)="resetIncreaseCount()">முதலிலிருந்து மணி</button>
         </div>
     </div>
-    <div fxLayoutAlign.lt-sm="center center" fxLayout="column">
-        <p class="japa-indicate"> கீழே உள்ள பட்டனை கிளிக் செய்து உங்களுடைய ஜபத்தை  ஆரம்பிக்கவும்  </p>
-        <p class="japa-indicate"> <mat-checkbox (change)="srilaPrabhu($event.checked)" > ஸ்ரீல பிரபுபாதருடன் ஜபம் செய்ய</mat-checkbox> </p>
-        <button mat-raised-button (click)="increaseSpeed()">Increase Speed</button>
-<button mat-raised-button (click)="decreaseSpeed()">Decrease Speed</button>
+    <p class="japa-indicate"> கீழே உள்ள பட்டனை கிளிக் செய்து உங்களுடைய ஜபத்தை  ஆரம்பிக்கவும்  </p>
+    <div class="container">
+    <div class="row">
+        <div class="col-4"  fxLayoutAlign.lt-sm="center center" fxLayout="column">
+            <p class="text-center font-weight-bold">ஸ்ரீல பிரபுபாதருடன் ஜபம் செய்ய</p>
+            <mat-slide-toggle (change)="srilaPrabhu($event.checked)" > </mat-slide-toggle>
+        </div>
+        <div class="col-4">
+            <button mat-fab color="accent" class="chant-count"  [disabled]="isPlaying" (click)="increaseCount()"><span>{{beatCounting || count}}</span></button>
+        </div>
+        <div class="col-4" fxLayoutAlign.lt-sm="center center" fxLayout="column">
+            <p class="text-center font-weight-bold">டிக் சப்தத்துடன் ஜபம் செய்ய</p>
+            <mat-slide-toggle (change)="tickSound($event.checked)" ></mat-slide-toggle>
+        </div>
+    <!-- <div  fxLayoutAlign.lt-sm="center center" fxLayout="row"> -->
+        <!-- <button mat-raised-button (click)="increaseSpeed()">Increase Speed</button> -->
+<!-- <button mat-raised-button (click)="decreaseSpeed()">Decrease Speed</button> -->
 
-        <button mat-fab color="accent" class="chant-count"  [disabled]="isPlaying" (click)="increaseCount()"><span>{{beatCounting || count}}</span></button>
     </div>
+</div>
     </div>
    
     
