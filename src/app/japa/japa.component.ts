@@ -63,12 +63,13 @@ export class JapaComponent implements OnInit {
     bell.play();
   }
   jayaSriKrishna(){
+    this.isPlaying = false;
     let jaya = new Audio();
     jaya.src = '../assets/mp3/jayaSri.mp3';
     jaya.load();
     jaya.play();
     jaya.addEventListener('ended', () =>{
-      this.isPlaying = true;
+      this.isPlaying = false;
     })
   }
   reset16Count(){
