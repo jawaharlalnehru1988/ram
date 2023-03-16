@@ -26,6 +26,10 @@
     padding: 6px;
     border: 2px solid #b45815;
 }
+.custom-progress-bar {
+    height: 7px; /* set the height to your desired value */
+  }
+  
 .malaCount{
     display: flex;
     flex-direction: column;
@@ -58,7 +62,7 @@ justify-content: center;
 }
 .malaCoutArea{
     background-color: yellow;
-    width: 150px;
+    width: 104px;
     font-size: 25px;
     height: 28px;
     color: rgb(104, 2, 2);
@@ -90,10 +94,11 @@ mat-button-toggle.play_button{
 }
 
 .prabhupadaImg{
-    width: 66px;
+    width: 56px;
 }
 .lordRadhaKrishna{
-    width: 100px;
+    width: 89px;
+    margin-left: 10px;
 }
 .japa-indicate{
     text-align: center;

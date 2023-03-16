@@ -23,6 +23,7 @@ export class JapaComponent implements OnInit {
   isPlaying = false;
   audio!: HTMLAudioElement;
   isTickChecked: any;
+  isPlayingsri: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -63,13 +64,13 @@ export class JapaComponent implements OnInit {
     bell.play();
   }
   jayaSriKrishna(){
-    this.isPlaying = false;
+    this.isPlayingsri = true;
     let jaya = new Audio();
     jaya.src = '../assets/mp3/jayaSri.mp3';
     jaya.load();
     jaya.play();
     jaya.addEventListener('ended', () =>{
-      this.isPlaying = false;
+      this.isPlayingsri = false;
     })
   }
   reset16Count(){
