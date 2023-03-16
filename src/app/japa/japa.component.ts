@@ -1,7 +1,5 @@
-import { Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
-import { interval, Observable, timer } from 'rxjs';
-import * as moment from 'moment';
-import { HttpClient } from '@angular/common/http';
+import { Component, ElementRef,  OnInit, ViewChild } from '@angular/core';
+
 
 
 @Component({
@@ -16,6 +14,7 @@ export class JapaComponent implements OnInit {
   malaCounting = 0;
   beatCounting = 0;
   sixteenMalaCount = 0;
+  isAudioPassed = false;
   count: number=0;
   comparisonCount: any;
   timeElements: any;
@@ -63,6 +62,15 @@ export class JapaComponent implements OnInit {
     bell.load();
     bell.play();
   }
+  jayaSriKrishna(){
+    let jaya = new Audio();
+    jaya.src = '../assets/mp3/jayaSri.mp3';
+    jaya.load();
+    jaya.play();
+    jaya.addEventListener('ended', () =>{
+      this.isPlaying = true;
+    })
+  }
   reset16Count(){
     this.malaCounting = 0;
   }
@@ -79,6 +87,44 @@ if (isChecked === true) {
 } else {
   this.prabhuVoiceEnabled = false;
 }
+  }
+  loop108Count(event:any){
+    this.isAudioPassed = !this.isAudioPassed;
+    this.prabhuVoiceEnabled = false;
+
+      let loopAudio = new Audio();
+    loopAudio.src = '../assets/mp3/prabhupadaChant.mp3';
+    loopAudio.load();
+    if (this.isAudioPassed) {
+    loopAudio.play();
+    } else {
+      alert('இந்த மந்திரம் முடிந்த பிறகு  நிறுத்தப்படும். ஏனென்றால் மந்திரத்தை இடையில் நிறுத்தக்கூடாது');
+      loopAudio.pause();
+      this.prabhuVoiceEnabled = true;
+    }
+    loopAudio.addEventListener('ended', ()=>{
+      this.playAudio(1);
+    })
+    
+    
+  }
+  playAudio(count: number) {
+    this.increaseCount();
+    if (count > 108) {
+      this.isPlaying = false;
+      return;
+    }
+    this.audio = new Audio();
+    this.audio.src = '../assets/mp3/prabhupadaChant.mp3';
+    this.audio.load();
+    if (this.isAudioPassed) {
+      this.audio.play();
+    } else {
+      this.audio.pause();
+    }
+    this.audio.addEventListener('ended', () => {
+      this.playAudio(count + 1);
+    });
   }
   openKirtan(){
     this.isPlaying = true;

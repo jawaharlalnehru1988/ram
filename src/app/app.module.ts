@@ -54,7 +54,7 @@ import { LoginComponent } from './info-collect/login/login.component';
 import { FestivalComponent } from './arati-songs/festival/festival.component';
 import {MatCheckboxModule} from '@angular/material/checkbox'; 
 import {MatSlideToggleModule} from '@angular/material/slide-toggle'; 
-
+import {MatProgressBarModule} from '@angular/material/progress-bar'; 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   interactionPlugin
@@ -96,6 +96,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MatProgressSpinnerModule,
     MatCardModule,
     MatSliderModule,
+    MatProgressBarModule,
     MatDialogModule,
     MatListModule,
     MatRippleModule,

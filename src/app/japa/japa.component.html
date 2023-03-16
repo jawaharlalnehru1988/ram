@@ -2,13 +2,19 @@
     <div class="mahaMantra"><p> ஹரே கிருஷ்ண ஹரே கிருஷ்ண </p> <p>கிருஷ்ண கிருஷ்ண ஹரே ஹரே </p> <p>ஹரே ராம ஹரே ராம </p> <p>ராம ராம ஹரே ஹரே</p></div>
    <div class="container">
     <div class="row mt-2">
-        <div class="col-4 pictureContent"><img src="assets/images/prabhupada-chanting.jpg" class="prabhupadaImg" alt=""></div>
+        <div class="col-4 pictureContent">
+            <img src="assets/images/prabhupada-chanting.jpg" class="prabhupadaImg" alt="">
+            <button class="mt-2" mat-mini-fab (click)="loop108Count(isAudioPassed)"><mat-icon>loop</mat-icon> </button>
+        </div>
         <div class="col-4 pictureContent">
         <p class="malaTitle">16 மாலைகள் </p> 
         <p class="malaCoutArea">{{sixteenMalaCount}}</p>
         <button mat-raised-button color="warn" class="fromFirst" (click)="reset64Count()">முதலிலிருந்து 16<br>மாலை</button>
         </div>
-        <div class="col-4"><img src="assets/images/radahkrsihna.png" class="lordRadhaKrishna" alt=""></div>
+        <div class="col-4">
+            <img src="assets/images/radahkrsihna.png" class="lordRadhaKrishna" alt="">
+            <button color="accent" mat-flat-button (click)="jayaSriKrishna()" [disabled]="isPlaying">ஜெய ஸ்ரீ</button>
+        </div>
     </div>
 </div>
     <div fxLayout="row" class="mt-3">
@@ -25,6 +31,7 @@
          <button class="fromFirst" (click)="resetIncreaseCount()">முதலிலிருந்து மணி</button>
         </div>
     </div>
+    <mat-progress-bar class="mt-2" mode="determinate" [value]="(beatCounting || count)/ 108 * 100"></mat-progress-bar>
     <p class="japa-indicate"> கீழே உள்ள பட்டனை கிளிக் செய்து உங்களுடைய ஜபத்தை ஆரம்பிக்கவும்  </p>
     <div class="container">
     <div class="row">
