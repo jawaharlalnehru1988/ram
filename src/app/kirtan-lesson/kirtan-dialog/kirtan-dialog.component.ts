@@ -13,6 +13,7 @@ import { ApiService } from 'src/app/services/api.service';
 export class KirtanDialogComponent implements OnInit {
 
   mritangaForm! : FormGroup;
+  data: any;
   constructor( private api: ApiService, private fb: FormBuilder,  @Inject(MAT_DIALOG_DATA) public editData: any, private dialogRef: MatDialogRef<KirtanDialogComponent>) { }
 
   ngOnInit(): void {
@@ -23,6 +24,8 @@ export class KirtanDialogComponent implements OnInit {
       detail: ['', Validators.required]
     });
     this.editdata();
+    console.log(this.editData.message);
+    this.data = this.editData;
   }
 editdata(){
   if(this.editData && this.editData.routerName === 'arati-songs'){   

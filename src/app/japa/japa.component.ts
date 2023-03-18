@@ -1,5 +1,6 @@
-import { Component, ElementRef,  OnInit, ViewChild } from '@angular/core';
-
+import { Component,  OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { KirtanDialogComponent } from '../kirtan-lesson/kirtan-dialog/kirtan-dialog.component';
 
 
 @Component({
@@ -10,7 +11,6 @@ import { Component, ElementRef,  OnInit, ViewChild } from '@angular/core';
 export class JapaComponent implements OnInit {
   audioObj = new Audio();
   url = "../assets/mp3/pr108.mp3"
-  @ViewChild('#tempRef') tempRef!: ElementRef ;
   malaCounting = 0;
   beatCounting = 0;
   sixteenMalaCount = 0;
@@ -24,24 +24,26 @@ export class JapaComponent implements OnInit {
   audio!: HTMLAudioElement;
   isTickChecked: any;
   isPlayingsri: boolean = false;
-  constructor() { }
+  fullMala = 108;
+  loopAudio:any;
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
 
   }
+playTickSound(){
+  let tick = new Audio();
+  tick.src = '../assets/mp3/tick.mp3';
+  tick.load();
+  tick.play();
+}
 
   increaseCount(){
     if(this.isTickChecked === true){
-      let tick = new Audio();
-      tick.src = '../assets/mp3/tick.mp3';
-      tick.load();
-      tick.play();
-    } else {
-      console.log("டிக் சப்தம் வேண்டுமா ?");
-      
+      this.playTickSound();
     }
     this.beatCounting += 1;
-    if(this.beatCounting === 108){
+    if(this.beatCounting === this.fullMala){
     this.oneHundredEight();
     }
     if(this.prabhuVoiceEnabled === true){
@@ -94,25 +96,33 @@ if (isChecked === true) {
     this.isAudioPassed = !this.isAudioPassed;
     this.prabhuVoiceEnabled = false;
 
-      let loopAudio = new Audio();
-    loopAudio.src = '../assets/mp3/prabhupadaChant.mp3';
-    loopAudio.load();
+      this.loopAudio = new Audio();
+    this.loopAudio.src = '../assets/mp3/prabhupadaChant.mp3';
+    this.loopAudio.load();
     if (this.isAudioPassed) {
-    loopAudio.play();
+    this.loopAudio.play();
     } else {
-      alert('இந்த மந்திரம் முடிந்த பிறகு  நிறுத்தப்படும். ஏனென்றால் மந்திரத்தை இடையில் நிறுத்தக்கூடாது');
-      loopAudio.pause();
-      this.prabhuVoiceEnabled = true;
+      this.openDialog();
+      this.loopAudio.pause();
     }
-    loopAudio.addEventListener('ended', ()=>{
+    this.loopAudio.addEventListener('ended', ()=>{
       this.playAudio(1);
     })
     
     
   }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(KirtanDialogComponent, {
+      width: '250px',
+      data: {
+        message: "இந்த மந்திரம் முடிந்த பிறகு  நிறுத்தப்படும். ஏனென்றால் மந்திரத்தை இடையில் நிறுத்தக்கூடாது",
+        id: "japa"
+      }
+    })
+  }
   playAudio(count: number) {
     this.increaseCount();
-    if (count > 108) {
+    if (count > 1728) {
       this.isPlaying = false;
       return;
     }

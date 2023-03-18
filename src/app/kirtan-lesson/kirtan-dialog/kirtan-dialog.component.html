@@ -1,5 +1,5 @@
 
-<div class="sign-in">
+<div class="sign-in" *ngIf="data.id !== 'japa'">
     <div class="d-flex justify-content-between">
         <h2>Add your Mritanga Lessons</h2>
         <a mat-dialog-close> <mat-icon><span class="material-symbols-rounded">close </span></mat-icon> </a>
@@ -42,4 +42,9 @@
             <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
             <button mat-raised-button color="primary" (click)="saveForm()"> {{editData?"Update":"Save"}}</button>
         </mat-dialog-actions>
+</div>
+
+<div *ngIf="data.id === 'japa'">
+  <button mat-button mat-dialog-close style="float: right;"><mat-icon>close</mat-icon> </button>
+  <h2 style="font-weight: 900;">{{data.message}}</h2>
 </div>

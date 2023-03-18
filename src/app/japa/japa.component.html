@@ -18,7 +18,7 @@
         </div>
     </div>
 </div>
-    <div fxLayout="row" class="mt-3">
+    <div fxLayout="row" fxLayoutAlign="space-around" class="mt-3">
     
         <div class="malaCount SideLine">
             <p class="malaTitle">மாலை எண்ணிக்கை</p> 
@@ -41,7 +41,7 @@
             <mat-slide-toggle (change)="srilaPrabhu($event.checked)" > </mat-slide-toggle>
         </p>
         </div>
-        <div class="col-4">
+        <div class="col-4" fxLayout="row" fxLayoutAlign="center">
             <button mat-fab color="accent" class="chant-count"  [disabled]="isPlaying" (click)="increaseCount()"><span>{{beatCounting || count}}</span></button>
         </div>
         <div class="col-4" fxLayoutAlign.lt-sm="center center" fxLayout="column">
