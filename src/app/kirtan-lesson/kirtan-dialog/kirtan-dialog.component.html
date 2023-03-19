@@ -44,7 +44,11 @@
         </mat-dialog-actions>
 </div>
 
-<div *ngIf="data.id === 'japa'">
-  <button mat-button mat-dialog-close style="float: right;"><mat-icon>close</mat-icon> </button>
-  <h2 style="font-weight: 900;">{{data.message}}</h2>
+<div *ngIf="data.id === 'japa'" fxLayout="column" class="dialogStyle">
+  <div>
+
+    <button mat-icon-button color="warn" mat-dialog-close style="float: right;"><mat-icon >close</mat-icon> </button>
+  </div>
+    <p style="font-weight: 900;">{{data.message}}</p>
+  
 </div>

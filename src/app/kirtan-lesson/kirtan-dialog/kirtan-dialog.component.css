@@ -6,3 +6,8 @@
   mat-form-field{
     width: 100%;
 }
+.dialogStyle{
+  background-color: yellowgreen;
+  border: 2px solid brown;
+  text-align: center;
+}

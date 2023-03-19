@@ -5,7 +5,9 @@
         <div class="col-4 pictureContent">
             <img src="assets/images/caitanya.jpg" class="prabhupadaImg" alt="">
             <img src="assets/images/prabhupada-chanting.jpg" class="prabhupadaImg" alt="">
-            <button class="mt-2" mat-mini-fab (click)="loop108Count(isAudioPassed)"><mat-icon>loop</mat-icon> </button>
+            <button class="mt-2" mat-mini-fab (click)="loop108Count(isAudioPaused)">
+                <mat-icon>loop</mat-icon>
+             </button>
         </div>
         <div class="col-4 pictureContent">
         <p class="malaTitle">16 மாலைகள் </p> 
@@ -14,7 +16,7 @@
         </div>
         <div class="col-4 pictureContent">
             <img src="assets/images/radahkrsihna.png" class="lordRadhaKrishna" alt="">
-            <button color="accent" mat-mini-fab (click)="jayaSriKrishna()" [disabled]="isPlayingsri">ஸ்ரீ</button>
+            <button color="accent" mat-mini-fab (click)="jayaSriKrishna()" [disabled]="isPlayingsri || isPlaying">ஸ்ரீ</button>
         </div>
     </div>
 </div>
@@ -38,7 +40,7 @@
     <div class="row">
         <div class="col-4"  fxLayoutAlign.lt-sm="center center" fxLayout="column">
             <p class="fromFirst">ஸ்ரீல பிரபுபாதருடன் ஜபம் செய்ய
-            <mat-slide-toggle (change)="srilaPrabhu($event.checked)" > </mat-slide-toggle>
+            <mat-slide-toggle [disabled]="isPlaying" (change)="srilaPrabhu($event.checked)" > </mat-slide-toggle>
         </p>
         </div>
         <div class="col-4" fxLayout="row" fxLayoutAlign="center">
@@ -46,7 +48,7 @@
         </div>
         <div class="col-4" fxLayoutAlign.lt-sm="center center" fxLayout="column">
             <p class="fromFirst">டிக் ஒலியுடன் ஜபம் செய்ய
-            <mat-slide-toggle (change)="tickSound($event.checked)" ></mat-slide-toggle>
+            <mat-slide-toggle [disabled]="isPlaying" (change)="tickSound($event.checked)" ></mat-slide-toggle>
         </p>
         </div>
     <!-- <div  fxLayoutAlign.lt-sm="center center" fxLayout="row"> -->
