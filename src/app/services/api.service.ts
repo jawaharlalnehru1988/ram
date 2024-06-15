@@ -17,7 +17,7 @@ this.observeFestival.next(message);
     return this.http.post<any>("http://localhost:3000/lessons", data);
   }
   getLesson(){
-return this.http.get<any>("https://drab-gold-fly-yoke.cyclic.app/mritangaLessons");
+     return this.http.get<any>("https://drab-gold-fly-yoke.cyclic.app/mritangaLessons");
   }
 //   getLesson(){
 // return this.http.get<any>("http://localhost:3000/lessons");

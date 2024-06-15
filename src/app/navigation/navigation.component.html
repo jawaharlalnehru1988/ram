@@ -1,6 +1,24 @@
     <div class="container-max allContent">
       <div class="row">
-        <img src="/assets/images/radakrishna.jpg" alt="">
+        <!-- <div class="row">
+          <div class="col-lg-8">
+            <img src="/assets/images/radakrishna.jpg" alt="">
+          </div>
+          <div class="col-lg-4">
+            ram
+          </div>
+        </div> -->
+        <div class="container">
+          <div class="row">
+              <div class="col-sm-12 col-md-6 col-lg-8">
+                  <img src="/assets/images/radakrishna.jpg" alt="" class="img-fluid">
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-4" >
+                  <button  *ngFor="let button of buttons" [routerLink]="button.route" class="custom-button">{{ button.label }}</button>
+              </div>
+              
+          </div>
+      </div>
         <marquee behavior="scrolling" direction="left" class="marq">
          <p> Hare Krishna Hare Krishna Krishna Krishna Hare Hare Hare Rama Hare Rama Rama Rama Hare Hare -  ஹரே கிருஷ்ண ஹரே கிருஷ்ண கிருஷ்ண கிருஷ்ண ஹரே ஹரே ஹரே ராம ஹரே ராம ராம ராம ஹரே ஹரே</p>
         </marquee>

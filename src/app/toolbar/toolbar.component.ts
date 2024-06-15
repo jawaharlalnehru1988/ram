@@ -22,33 +22,33 @@ export class ToolbarComponent implements OnInit {
   constructor(private dialog: MatDialog,  private httpClient: HttpClient, private api: ApiService) { }
 
   ngOnInit(): void {
-  this.getUserInformation();
-  this.getMenu(); 
+  // this.getUserInformation();
+  // this.getMenu(); 
   this.getSessionStrogeValue();
   }
   getSessionStrogeValue(){
     this.userRole = sessionStorage.getItem('userrole');
     this.userName = sessionStorage.getItem('username');
   }
-  getMenu(){
-    this.api.getMenus().subscribe({
-      next:(res)=>{
-        this.allRouterPath = res
-      }, error:(error)=>{
-        alert('some error occured from server, please connect with the internet')
-      }
-    })
-  }
- getUserInformation(){
-  this.api.getUserInfo().subscribe({
-    next: (res)=>{
-      console.log(res);
-    }, error: (err)=>{
-      alert('users does not exist');
+  // getMenu(){
+  //   this.api.getMenus().subscribe({
+  //     next:(res)=>{
+  //       this.allRouterPath = res
+  //     }, error:(error)=>{
+  //       alert('some error occured from server, please connect with the internet')
+  //     }
+  //   })
+  // }
+//  getUserInformation(){
+//   this.api.getUserInfo().subscribe({
+//     next: (res)=>{
+//       console.log(res);
+//     }, error: (err)=>{
+//       alert('users does not exist');
       
-    }
-  })
- }
+//     }
+//   })
+//  }
   openDialog(){
     
     const dialogRef = this.dialog.open(InfoCollectComponent,{

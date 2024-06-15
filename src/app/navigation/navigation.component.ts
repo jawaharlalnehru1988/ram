@@ -10,7 +10,11 @@ import { InfoCollectComponent } from '../info-collect/info-collect.component';
 })
 export class NavigationComponent implements OnInit {
   
-
+  buttons = [
+    { label: 'Ekadasi', route: '/ekadasi' },
+    { label: 'Button 2', route: '/button2' },
+    { label: 'Button 3', route: '/button3' }
+  ];
   constructor(private dialog: MatDialog,) { }
 
   ngOnInit(): void {
