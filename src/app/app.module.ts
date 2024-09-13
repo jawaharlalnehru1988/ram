@@ -32,7 +32,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCardModule } from '@angular/material/card';
 import { KirtanLessonComponent } from './kirtan-lesson/kirtan-lesson.component';
-import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+// import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { BooksComponent } from './books/books.component';
 import { CustomePipePipe } from './kirtan-lesson/custome-pipe.pipe';
@@ -116,7 +116,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     FullCalendarModule,
     MatCheckboxModule,
     MatSlideToggleModule,
-    NgxYoutubePlayerModule.forRoot()
+    // NgxYoutubePlayerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],

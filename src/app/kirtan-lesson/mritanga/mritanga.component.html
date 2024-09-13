@@ -73,7 +73,7 @@
     <mat-card-title>{{lesson.title}}</mat-card-title>
     <mat-card-subtitle>{{lesson.author}}- +91 7501197661</mat-card-subtitle>
   </mat-card-header>
-  <youtube-player [videoId]="lesson.youtubeId" [playerVars]="playerVars" (ready)="savePlayer($event)"></youtube-player>
+  <!-- <youtube-player [videoId]="lesson.youtubeId" [playerVars]="playerVars" (ready)="savePlayer($event)"></youtube-player> -->
   <mat-card-content>
     <p class="details" [innerHTML]="formatText(lesson.detail.substring(0, 100))" *ngIf="!showFullText"></p>
     <p class="details" [innerHTML]="formatText(lesson.detail)" *ngIf="showFullText"></p>
