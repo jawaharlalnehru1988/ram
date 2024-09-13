@@ -2,23 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({
-  name: 'customePipe'
-})
-export class AccessPipe implements PipeTransform {
-  constructor(){};
- accessTypeId = 1;
- isReadable! : boolean;
-  transform(accessTypeId: any): any {
-    if(this.accessTypeId == 1){
-      this.isReadable = true;
-    } else {
-      this.isReadable = false;
-    }
-    return accessTypeId;
-  }
 
-}
 
 @Component({
   selector: 'app-kirtan-lesson',
