@@ -1,11 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import {AfterViewInit, Component,  OnInit, ViewChild} from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
+import {MatLegacyPaginator as MatPaginator} from '@angular/material/legacy-paginator';
+import {MatLegacyTableDataSource as MatTableDataSource} from '@angular/material/legacy-table';
 import {MatSort} from '@angular/material/sort';
-import {MatDialog} from '@angular/material/dialog';
+import {MatLegacyDialog as MatDialog} from '@angular/material/legacy-dialog';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 export interface PeriodicElement {
   name: string;
@@ -14,6 +19,8 @@ export interface PeriodicElement {
   symbol: string;
 }
 @Component({
+  standalone: true,
+  imports: [MatFormFieldModule, MatTableModule, RouterModule, MatPaginatorModule, CommonModule, MatIconModule],
   selector: 'app-guruparampara',
   templateUrl: './guruparampara.component.html',
   styleUrls: ['./guruparampara.component.css']

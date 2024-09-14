@@ -1,13 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { KirtanDialogComponent } from '../kirtan-dialog/kirtan-dialog.component';
-import {MatDialog} from '@angular/material/dialog';
 import { ApiService } from 'src/app/services/api.service';
-import {AfterViewInit, ViewChild} from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
+import {ViewChild} from '@angular/core';
 import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
+import { CommonModule } from '@angular/common';
+import {MatCardModule} from '@angular/material/card';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatDialog } from '@angular/material/dialog';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 @Component({
+  standalone: true,
+  imports: [CommonModule, MatCardModule, MatProgressSpinnerModule],
   selector: 'app-mritanga',
   templateUrl: './mritanga.component.html',
   styleUrls: ['./mritanga.component.css']

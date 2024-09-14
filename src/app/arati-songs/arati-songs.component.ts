@@ -1,11 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { KirtanDialogComponent } from '../kirtan-lesson/kirtan-dialog/kirtan-dialog.component';
 import { ApiService } from '../services/api.service';
+import { MatDialog } from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
 
 @Component({
+  standalone: true,
+  imports: [CommonModule, MatCardModule,MatSlideToggleModule ],
   selector: 'app-arati-songs',
   templateUrl: './arati-songs.component.html',
   styleUrls: ['./arati-songs.component.css']

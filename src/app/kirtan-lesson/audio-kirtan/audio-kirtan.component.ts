@@ -1,12 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/services/api.service';
 import { KirtanDialogComponent } from '../kirtan-dialog/kirtan-dialog.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { CommonModule } from '@angular/common';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
+  standalone: true,
+  imports: [MatFormFieldModule, CommonModule, MatTableModule, MatPaginatorModule],
   selector: 'app-audio-kirtan',
   templateUrl: './audio-kirtan.component.html',
   styleUrls: ['./audio-kirtan.component.css']

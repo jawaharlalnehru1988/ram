@@ -1,7 +1,7 @@
 <div class="allContent">
-<div class="date_class mt-3"> {{today | date:'EEEE' | convert}},  {{today | date: 'longDate' | monthConvert}} {{date   | date: "HH:mm:ss"}}</div>
+<div class="date_class mt-3"> {{today | date:'EEEE'}},  {{today | date: 'longDate'}} {{date   | date: "HH:mm:ss"}}</div>
 
-<full-calendar class="calender-body" [options]="calendarOptions"></full-calendar>
+<!-- <full-calendar class="calender-body" [options]="calendarOptions"></full-calendar> -->
 <div class="container">
 <div *ngIf="dateFormat === '2022-11-20'">
     <h1>Utpana Ekadasi</h1>

@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { CalendarOptions } from '@fullcalendar/angular'; // useful for typechecking
-import {MatDialog} from '@angular/material/dialog';
+// import { CalendarOptions, FullCalendarModule } from '@fullcalendar/angular'; // useful for typechecking
 import { PopUpEventComponent } from './pop-up-event/pop-up-event.component';
 import { ApiService } from '../services/api.service';
+import { CommonModule } from '@angular/common';
+import { ConvertPipe } from './convert.pipe';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
+  standalone: true,
+  imports: [CommonModule],
   selector: 'app-calender',
   templateUrl: './calender.component.html',
   styleUrls: ['./calender.component.css']
@@ -14,7 +18,8 @@ export class CalenderComponent implements OnInit {
   today = new Date();
   date!:Date;
   weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-  calendarOptions: CalendarOptions = {
+  // calendarOptions: CalendarOptions = {
+  calendarOptions: any = {
     initialView: 'dayGridMonth',
     dateClick: this.handleDateClick.bind(this), // bind is important!
     events: [

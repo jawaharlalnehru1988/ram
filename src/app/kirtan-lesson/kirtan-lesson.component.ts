@@ -1,10 +1,14 @@
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Pipe, PipeTransform } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 
 @Component({
+  standalone: true,
+  imports: [MatCardModule, CommonModule, MatFormFieldModule],
   selector: 'app-kirtan-lesson',
   templateUrl: './kirtan-lesson.component.html',
   styleUrls: ['./kirtan-lesson.component.css']

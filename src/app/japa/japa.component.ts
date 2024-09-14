@@ -1,14 +1,20 @@
 import { Component,  OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog, MatLegacyDialogRef as MatDialogRef } from '@angular/material/legacy-dialog';
 import { KirtanDialogComponent } from '../kirtan-lesson/kirtan-dialog/kirtan-dialog.component';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 @Component({
+  standalone: true,
+  imports: [CommonModule, MatIconModule, MatProgressBarModule, MatSlideToggleModule],
   selector: 'app-japa',
   templateUrl: './japa.component.html',
   styleUrls: ['./japa.component.css']
 })
-export class JapaComponent implements OnInit {
+export class JapaComponent {
   audioObj = new Audio();
   url = "../assets/mp3/pr108.mp3"
   malaCounting = 0;

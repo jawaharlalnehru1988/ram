@@ -13,11 +13,10 @@ import { AudioKirtanComponent } from './kirtan-lesson/audio-kirtan/audio-kirtan.
 import { KirtanLessonComponent } from './kirtan-lesson/kirtan-lesson.component';
 import { MritangaComponent } from './kirtan-lesson/mritanga/mritanga.component';
 import { FooterComponent } from './navigation/footer/footer.component';
-import { NavigationComponent } from './navigation/navigation.component';
+import { HomeComponent } from './navigation/home/home.component';
 
-const routes: Routes = [
-  { path: '', component: NavigationComponent },
-  { path: 'navigation', component: NavigationComponent },
+export const routes: Routes = [
+  { path: 'home', component: HomeComponent },
   { path: 'footer', component: FooterComponent },
   { path: "srilaPrabhupada", component: SrilaPrabhupadaComponent },
   { path: "calendar", component: CalenderComponent },
@@ -30,7 +29,9 @@ const routes: Routes = [
   {path: 'guruparampara', component: GuruparamparaComponent},
   {path: 'user/:id', component: GuruDetailsComponent},
   {path: 'kirtan-lesson/mritanga', component: MritangaComponent},
-  {path: 'audiokirtan', component: AudioKirtanComponent}
+  {path: 'audiokirtan', component: AudioKirtanComponent},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: '**', redirectTo: '/home'}
 ];
 
 @NgModule({
