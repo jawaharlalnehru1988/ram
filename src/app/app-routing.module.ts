@@ -16,8 +16,9 @@ import { FooterComponent } from './navigation/footer/footer.component';
 import { HomeComponent } from './navigation/home/home.component';
 
 export const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'footer', component: FooterComponent },
+  { path: 'home', component: HomeComponent,
+    children: [
+      { path: 'footer', component: FooterComponent },
   { path: "srilaPrabhupada", component: SrilaPrabhupadaComponent },
   { path: "calendar", component: CalenderComponent },
   { path: "japa", component: JapaComponent },
@@ -32,6 +33,9 @@ export const routes: Routes = [
   {path: 'audiokirtan', component: AudioKirtanComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', redirectTo: '/home'}
+    ]
+   },
+  
 ];
 
 @NgModule({

@@ -19,6 +19,7 @@ import { HomeComponent } from './navigation/home/home.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { provideRouter } from '@angular/router';
+import { JapaComponent } from './japa/japa.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { provideRouter } from '@angular/router';
     MatMenuModule,
     MatTooltipModule,
     MatIconModule,
+    JapaComponent
   ],
   providers: [provideRouter(routes)],
   bootstrap: [AppComponent],
