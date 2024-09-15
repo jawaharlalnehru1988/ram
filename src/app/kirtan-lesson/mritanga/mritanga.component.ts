@@ -7,13 +7,13 @@ import { CommonModule } from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @Component({
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatProgressSpinnerModule],
+  imports: [CommonModule, MatCardModule, MatProgressSpinnerModule, MatDialogModule],
   selector: 'app-mritanga',
   templateUrl: './mritanga.component.html',
   styleUrls: ['./mritanga.component.css']
