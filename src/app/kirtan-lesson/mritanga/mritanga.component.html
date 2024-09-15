@@ -1,27 +1,35 @@
 
 <div class="allContent">
-<div *ngIf="isVideoLoading" class="spinner-container">
-  <mat-spinner color="accent" diameter="132" class="spinner"></mat-spinner>
-  <span class="spinner-text">Loading Lessons...</span>
-</div>
+  @if (isVideoLoading) {
+    <div class="spinner-container">
+      <mat-spinner color="accent" diameter="132" class="spinner"></mat-spinner>
+      <span class="spinner-text">Loading Lessons...</span>
+    </div>
+  }
 
-<div fxLayout="row wrap" fxLayoutAlign="start start">
-<mat-card class="example-card  my-card-class" *ngFor="let lesson of mritangaLessons" fxFlex.gt-sm="calc(33.33% - 10px)" fxFlex.lt-md="calc(50% - 10px)" fxFlex.lt-sm="100%">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>{{lesson.title}}</mat-card-title>
-    <mat-card-subtitle>{{lesson.author}}- +91 7501197661</mat-card-subtitle>
-  </mat-card-header>
-  <!-- <youtube-player [videoId]="lesson.youtubeId" [playerVars]="playerVars" (ready)="savePlayer($event)"></youtube-player> -->
-  <mat-card-content>
-    <p class="details" [innerHTML]="formatText(lesson.detail.substring(0, 100))" *ngIf="!showFullText"></p>
-    <p class="details" [innerHTML]="formatText(lesson.detail)" *ngIf="showFullText"></p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button color="accent" (click)="toggleFullText()">
-      {{ showFullText ? 'Show Less' : 'Show More' }}
-    </button>
-  </mat-card-actions>
-</mat-card>
-</div>
+  <div fxLayout="row wrap" fxLayoutAlign="start start">
+    @for (lesson of mritangaLessons; track lesson) {
+      <mat-card class="example-card  my-card-class" fxFlex.gt-sm="calc(33.33% - 10px)" fxFlex.lt-md="calc(50% - 10px)" fxFlex.lt-sm="100%">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{lesson.title}}</mat-card-title>
+          <mat-card-subtitle>{{lesson.author}}- +91 7501197661</mat-card-subtitle>
+        </mat-card-header>
+        <!-- <youtube-player [videoId]="lesson.youtubeId" [playerVars]="playerVars" (ready)="savePlayer($event)"></youtube-player> -->
+        <mat-card-content>
+          @if (!showFullText) {
+            <p class="details" [innerHTML]="formatText(lesson.detail.substring(0, 100))"></p>
+          }
+          @if (showFullText) {
+            <p class="details" [innerHTML]="formatText(lesson.detail)"></p>
+          }
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="accent" (click)="toggleFullText()">
+            {{ showFullText ? 'Show Less' : 'Show More' }}
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    }
+  </div>
 </div>

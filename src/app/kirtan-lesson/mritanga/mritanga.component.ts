@@ -3,7 +3,7 @@ import { KirtanDialogComponent } from '../kirtan-dialog/kirtan-dialog.component'
 import { ApiService } from 'src/app/services/api.service';
 import {ViewChild} from '@angular/core';
 import {MatSort} from '@angular/material/sort';
-import { CommonModule } from '@angular/common';
+
 import {MatCardModule} from '@angular/material/card';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
@@ -13,7 +13,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatProgressSpinnerModule, MatDialogModule],
+  imports: [MatCardModule, MatProgressSpinnerModule, MatDialogModule],
   selector: 'app-mritanga',
   templateUrl: './mritanga.component.html',
   styleUrls: ['./mritanga.component.css']

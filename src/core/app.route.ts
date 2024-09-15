@@ -2,6 +2,11 @@ import { Routes } from '@angular/router';
 
 export const appRoutes: Routes = [
   {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
     path: 'home',
     loadComponent: () =>
       import('../app/navigation/home/home.component').then(
@@ -92,11 +97,6 @@ export const appRoutes: Routes = [
       import('../app/kirtan-lesson/audio-kirtan/audio-kirtan.component').then(
         (m) => m.AudioKirtanComponent
       ),
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
   },
   {
     path: '**',

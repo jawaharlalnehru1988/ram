@@ -3,14 +3,14 @@ import { MatSort } from '@angular/material/sort';
 import { ApiService } from 'src/app/services/api.service';
 import { KirtanDialogComponent } from '../kirtan-dialog/kirtan-dialog.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { CommonModule } from '@angular/common';
+
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   standalone: true,
-  imports: [MatFormFieldModule, CommonModule, MatTableModule, MatPaginatorModule],
+  imports: [MatFormFieldModule, MatTableModule, MatPaginatorModule],
   selector: 'app-audio-kirtan',
   templateUrl: './audio-kirtan.component.html',
   styleUrls: ['./audio-kirtan.component.css']

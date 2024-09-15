@@ -4,7 +4,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterLink } from '@angular/router';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { NgFor, NgIf } from '@angular/common';
+
 
 interface RouterData {
   routerPath: string
@@ -15,7 +15,7 @@ interface RouterData {
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css'],
   standalone: true,
-  imports: [RouterLink, MatTooltipModule, MatIconModule,MatMenuModule, MatToolbarModule, NgFor]
+  imports: [RouterLink, MatTooltipModule, MatIconModule, MatMenuModule, MatToolbarModule]
 })
 export class NavigationComponent implements OnInit {
   userName:string = 'Srila Prabhupada';

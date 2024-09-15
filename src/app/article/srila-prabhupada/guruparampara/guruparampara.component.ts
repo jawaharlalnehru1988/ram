@@ -1,16 +1,16 @@
 import { HttpClient } from '@angular/common/http';
-import {AfterViewInit, Component,  OnInit, ViewChild} from '@angular/core';
-import {MatLegacyPaginator as MatPaginator} from '@angular/material/legacy-paginator';
-import {MatLegacyTableDataSource as MatTableDataSource} from '@angular/material/legacy-table';
+import {AfterViewInit, Component,  inject,  OnInit, ViewChild} from '@angular/core';
 import {MatSort} from '@angular/material/sort';
-import {MatLegacyDialog as MatDialog} from '@angular/material/legacy-dialog';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { CommonModule } from '@angular/common';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+
 import { MatIconModule } from '@angular/material/icon';
+import {
+  MatDialog,
+} from '@angular/material/dialog';
 
 export interface PeriodicElement {
   name: string;
@@ -20,25 +20,21 @@ export interface PeriodicElement {
 }
 @Component({
   standalone: true,
-  imports: [MatFormFieldModule, MatTableModule, RouterModule, MatPaginatorModule, CommonModule, MatIconModule],
+  imports: [MatFormFieldModule, MatTableModule, RouterModule, MatPaginatorModule, MatIconModule],
   selector: 'app-guruparampara',
   templateUrl: './guruparampara.component.html',
   styleUrls: ['./guruparampara.component.css']
 })
-export class GuruparamparaComponent implements OnInit, AfterViewInit {
+export class GuruparamparaComponent implements OnInit {
   displayedColumns: any[] = ['id', 'acharyaName', 'photo', 'details', 'edit', 'delete'];
   dataSource!: MatTableDataSource<any>;
-
+  private httpClient  = inject(HttpClient);
+  private dialog = inject(MatDialog);
   
   acharyas: any;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  ngAfterViewInit() {
-    // this.dataSource.paginator = this.paginator;
-  }
-  constructor(private httpClient: HttpClient, public dialog: MatDialog) { }
-  
   ngOnInit() {
     this.getDetails();    
   }

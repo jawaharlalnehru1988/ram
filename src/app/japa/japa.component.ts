@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { KirtanDialogComponent } from '../kirtan-lesson/kirtan-dialog/kirtan-dialog.component';
-import { CommonModule } from '@angular/common';
+
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
@@ -9,7 +9,7 @@ import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dial
 
 @Component({
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatProgressBarModule, MatSlideToggleModule, MatDialogModule],
+  imports: [MatIconModule, MatProgressBarModule, MatSlideToggleModule, MatDialogModule],
   selector: 'app-japa',
   templateUrl: './japa.component.html',
   styleUrls: ['./japa.component.css']
