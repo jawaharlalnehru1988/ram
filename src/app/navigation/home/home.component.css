@@ -2,7 +2,9 @@
     flex: 1 1 auto;
   }
 
-
+.content-buttons{
+  padding: 0px 6px;
+}
 .container-max{
   background-image: url("../../../assets/images/background.jpg");
 }
