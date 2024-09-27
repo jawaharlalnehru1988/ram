@@ -1,0 +1,75 @@
+<p class="upcoming">Upcoming Events...</p> 
+
+<div>
+
+    <label for="buttondisplay" class="font-bold block mb-2"> Button </label>
+    <p-calendar 
+    [(ngModel)]="date1"
+    [showIcon]="true" 
+    inputId="buttondisplay" 
+    [showOnFocus]="false" />
+</div>
+<article>
+    <header>
+        <h1>{{ currentMonth }} - 2024</h1>
+    </header>
+    <section class="p-6">
+        <div class="container mx-auto">
+            @for (year of currentMonthObj; track $index) {
+
+    
+          <h2 class="text-2xl font-bold mb-4">{{ year.month }} Month Events</h2>
+          <div class="grid grid-cols-1 gap-4">
+            @for (event of year.events; track $index) {
+
+                <div class="flex justify-between items-center p-4 bg-gray-100 rounded">
+                    <span class="text-lg font-semibold">{{ event.date }}</span>
+                    <span class="text-lg">{{ event.name }}</span>
+                </div>
+            }
+          </div>
+        }
+        </div>
+      </section>
+      
+      
+    
+    <div class="relative overflow-hidden border-4 border-blue-500 rounded-lg bg-gradient-to-r from-purple-400 to-blue-400 p-4 shadow-md">
+        <div class="animate-scroll whitespace-nowrap text-white text-lg font-bold tracking-wider">
+            For more information about Vaishnava festivals and practices, Please Whatsapp +91 6382043976 .
+        </div>
+      </div>
+      <footer class="bg-gray-800 mt-6 text-white p-6">
+        <div class="container mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Contacts Section -->
+            <div>
+              <h2 class="text-xl font-bold mb-4">Contacts</h2>
+              <ul>
+                <li>Email: harekrishnatamil&#64;gmail.com</li>
+                <li>Phone1: +91 6382043976</li>
+                <li>Phone2: +91 8678977163</li>
+                <li>WhatsApp: +91 6382043976</li>
+              </ul>
+            </div>
+            <!-- Social Media Section -->
+            <div>
+              <h2 class="text-xl font-bold mb-4">Social Media</h2>
+              <ul>
+                <li><a href="https://instagram.com" class="hover:underline">Instagram</a></li>
+                <li><a href="https://whatsapp.com" class="hover:underline">WhatsApp Group</a></li>
+                <li><a href="https://youtube.com" class="hover:underline">YouTube</a></li>
+                <li><a href="https://facebook.com" class="hover:underline">Facebook</a></li>
+              </ul>
+            </div>
+            <!-- Other Websites Section -->
+            <div>
+              <h2 class="text-xl font-bold mb-4">Other Websites</h2>
+              <ul>
+                <li><a href="https://ram.com" class="hover:underline">ram.com</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>      
+</article>
