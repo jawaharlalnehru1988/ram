@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { NavigationComponent } from '../navigation.component';
+import { EventsComponent } from 'src/app/events/events.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   standalone: true,
-  imports: [RouterLink]
+  imports: [RouterLink, NavigationComponent, EventsComponent]
 })
 export class HomeComponent {
   buttons = [

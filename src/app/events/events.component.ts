@@ -1,7 +1,9 @@
 import { CommonModule, DatePipe, getLocaleMonthNames } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, model } from '@angular/core';
 import { FormsModule, NgModel, NgModelGroup } from '@angular/forms';
-import { CalendarModule } from 'primeng/calendar';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatCardModule} from '@angular/material/card';
+import { provideNativeDateAdapter } from '@angular/material/core';
 interface YearlyEvent {
   month: string; 
   events: Event[];
@@ -14,20 +16,77 @@ interface Event {
 @Component({
   selector: 'app-events',
   standalone: true,
-  imports: [CalendarModule, FormsModule],
-  providers: [DatePipe],
+  imports: [ FormsModule, MatDatepickerModule, MatCardModule],
+  providers: [DatePipe, provideNativeDateAdapter()],
   templateUrl: './events.component.html',
-  styleUrl: './events.component.scss'
+  styleUrl: './events.component.scss',
 })
 export class EventsComponent {
   date1: Date | undefined;
+  selected = model<Date | null>(null);
   monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
   ];
   now = new Date();
- 
-  
+  isTamilOrEnglish:boolean = true;
+  tamilYearEvents: YearlyEvent[] = [
+    {
+      "month": "செப்டம்பர்",
+      "events": [
+        { date: "11-செப்-2024", name: "ஸ்ரீமதி ராதா ராணி ஜன்மாஷ்டமி விழா" },
+        { date: "15-செப்-2024", name: "ஸ்ரீ வாமன துவாதசி" },
+        { date: "15-செப்-2024", name: "ஸ்ரீல ஜீவ கோஸ்வாமி தோற்ற தினம்" },
+        { date: "16-செப்-2024", name: "ஸ்ரீல பக்திவினோத் தாகூர் தோற்ற தினம்" },
+        { date: "17-செப்-2024", name: "ஆனந்த சதுர்தசி விரதம்" },
+        { date: "17-செப்-2024", name: "ஸ்ரீல ஹரிதாஸ் தாகூர் மறைவு தினம்" },
+        { date: "17-செப்-2024", name: "சதுர்மாச்யாவின் இரண்டாவது மாதத்தின் முடிவு" },
+        { date: "18-செப்-2024", name: "பத்ரா பூர்ணிமா" },
+        { date: "18-செப்-2024", name: "ஸ்ரீ விஸ்வரூப மஹோத்சவம்" },
+        { date: "18-செப்-2024", name: "சதுர்மாச்யாவின் மூன்றாவது மாதத்தின் தொடக்கம்" }
+      ]
+    },
+    {
+      month: 'அக்டோபர்', 
+      events:  [
+        { date: '10-அக்-2024', name: 'துர்கா பூஜை' },
+        { date: '13-அக்-2024', name: 'ராமச்சந்திர விஜயோத்சவா' },
+        { date: '13-அக்-2024', name: 'ஸ்ரீ மத்வாச்சார்யா தோற்ற நாள்' },
+        { date: '15-அக்-2024', name: 'ஸ்ரீல ரகுநாத தாச கோஸ்வாமி மறைவு நாள்' },
+        { date: '15-அக்-2024', name: 'ஸ்ரீல ரகுநாத பட்ட கோஸ்வாமி மறைவு நாள்' },
+        { date: '15-அக்-2024', name: 'ஸ்ரீல கிருஷ்ணதாஸ் கவிராஜ கோஸ்வாமி மறைவு நாள்' },
+        { date: '17-அக்-2024', name: 'லட்சுமி பூஜை' },
+        { date: '17-அக்-2024', name: 'ஸ்ரீ கிருஷ்ண சரதிய ராசயாத்திரை' },
+        { date: '17-அக்-2024', name: 'ஸ்ரீ முராரி குப்தா மறைவு நாள்' },
+        { date: '17-அக்-2024', name: 'சதுர்மாச்யாவின் நான்காவது மாதத்தின் தொடக்கம்' },
+        { date: '21-அக்-2024', name: 'ஸ்ரீல நாரோத்தம தாச தாகுர் மறைவு நாள்' },
+        { date: '24-அக்-2024', name: 'பகுலாஷ்டமி' },
+        { date: '25-அக்-2024', name: 'ஸ்ரீ வீரபத்ர தோற்ற நாள்' },
+      ]
+  },
+  {
+    "month": "நவம்பர்", 
+    "events":  [
+      { date: "01-நவ-2024", name: "தீபாவளி காளி பூஜை" },
+      { date: "03-அக்-2024", name: "ஸ்ரீ வாசுதேவ கோஷ் மறைவு நாள்" },
+      { date: "05-அக்-2024", name: "ஸ்ரீல பிரபுபாதர் மறைவு நாள்" },
+      { date: "09-அக்-2024", name: "ஸ்ரீ கதாதர தாச கோஸ்வாமி மறைவு நாள்" },
+      { date: "09-அக்-2024", name: "ஸ்ரீ தனஞ்சய பண்டிதர் மறைவு நாள்" },
+      { date: "09-அக்-2024", name: "ஸ்ரீ ஸ்ரீநிவாச ஆசார்யர் மறைவு நாள்" },
+      { date: "12-அக்-2024", name: "ஸ்ரீல கவுர கிஷோர் தாச பாபாஜி மறைவு நாள்" },
+      { date: "15-அக்-2024", name: "ஸ்ரீ பூகர்ப கோஸ்வாமி மறைவு நாள்" },
+      { date: "15-அக்-2024", name: "ஸ்ரீ காசிஸ்வர பண்டிதர் மறைவு நாள்" },
+      { date: "15-அக்-2024", name: "சதுர்மாச்யாவின் நான்காவது மாதத்தின் முடிவு" },
+      { date: "16-அக்-2024", name: "ஸ்ரீ நிம்பார்காசார்யர் தோற்ற நாள்" },
+      { date: "26-அக்-2024", name: "ஸ்ரீ நரஹரி சரகர தாகூர் மறைவு நாள்" },
+      { date: "27-அக்-2024", name: "ஸ்ரீ கலிய கிருஷ்ணதாஸ் மறைவு நாள்" },
+      { date: "29-அக்-2024", name: "ஸ்ரீ சாரங்க தாகூர் மறைவு நாள்" }
+    ]
+}
+
+
+  ];
+
   yearlyEvents:  YearlyEvent[]= [
     {
       month: 'September', 
@@ -209,10 +268,10 @@ export class EventsComponent {
   currentDate!: string | null;
   currentMonthObj: YearlyEvent[] = [];
   currentMonth: string = '';
-  constructor(private datePipe: DatePipe) {}
+  date: Date[] | undefined;
+  constructor() {}
   ngOnInit(): void {  
 
-    console.log('date1 :', this.date1);
       const now = new Date();
     this.currentMonth = this.monthNames[now.getMonth()];
 

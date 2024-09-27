@@ -1,20 +1,15 @@
-<div class="nav-bar navigationBar">
-  <mat-toolbar color="primary">
+<div class="nav-bar">
+  <mat-toolbar color="primary" class="flex justify-between">
     <div>
-      <button mat-icon-button [matMenuTriggerFor]="animals" aria-label="Example icon-button with menu icon">
+      <button mat-icon-button aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
       </button>
-      <button mat-button routerLink="/home"><mat-icon aria-hidden="false" aria-label="Example home icon"
-      fontIcon="home">home</mat-icon></button>
+      <button class="ms-4" mat-button routerLink="/home">
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          fontIcon="home">home</mat-icon>
+        </button>
     </div>
-    <div class="nameOfSite"><img src="assets/images/logo.jpg" class="logo" alt="">Hare Krishna Tamil</div>
+    <div class="font-bold ">ஹரே கிருஷ்ணா தமிழ்</div>
   </mat-toolbar>
-  <mat-menu #animals="matMenu" >
-    @for (route of allRouterPath; track route) {
-      <div>
-        <button mat-menu-item class="toolBtn" [matTooltip]="route.routerPath" [routerLink]="route.routerLink">{{route.routerPath}}</button>
-      </div>
-    }
 
-  </mat-menu>
 </div>
