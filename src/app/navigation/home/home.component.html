@@ -1,5 +1,5 @@
 
-<div class="container-max allContent">
+<div class="container-max">
   <div class="row">
     <div class="container">
       <div class="row">
@@ -15,28 +15,18 @@
       </div>
     </div>
     <marquee behavior="scrolling" direction="left" class="marq">
-      <p> Hare Krishna Hare Krishna Krishna Krishna Hare Hare Hare Rama Hare Rama Rama Rama Hare Hare -  ஹரே கிருஷ்ண ஹரே கிருஷ்ண கிருஷ்ண கிருஷ்ண ஹரே ஹரே ஹரே ராம ஹரே ராம ராம ராம ஹரே ஹரே</p>
+      <p>ஹரே கிருஷ்ண ஹரே கிருஷ்ண கிருஷ்ண கிருஷ்ண ஹரே ஹரே ஹரே ராம ஹரே ராம ராம ராம ஹரே ஹரே</p>
     </marquee>
-    <div class=" coloum-title">
-      <div class="content-navigators mt-3" fxLayout="row wrap" fxLayoutAlign.lt-sm="space-around" fxLayoutGap="10px">
-        <a class="content-buttons"  routerLink="/srilaPrabhupada"><img src="assets/images/aboutPrabhupada.png" class="image-class" alt=""></a>
-        <a class="content-buttons"  routerLink="/japa"><img src="assets/images/chantWithPrabhupada.png" class="image-class" alt=""></a>
-        <a class="content-buttons" routerLink="/kirtan-lesson/mritanga"><img src="assets/images/mritangalesson.png" class="image-class" alt=""></a>
-        <a class="content-buttons" routerLink="/kirtan-lesson"><img src="assets/images/karathalPrabhupada.png" class="image-class" alt=""></a>
-        <a class="content-buttons" routerLink="/festival"><img src="assets/images/arati.png" class="image-class" alt=""></a>
-        <a class="content-buttons"  routerLink="/audiokirtan"><img src="assets/images/kirtans.png" class="image-class" alt=""></a>
-        <a class="content-buttons" ><img src="assets/images/forum.png" class="image-class" alt=""></a>
-        <a class="content-buttons" routerLink="/calendar"><img src="assets/images/calender.png" class="image-class" alt=""></a>
-        <a class="content-buttons" ><img src="assets/images/cooks.png" class="image-class" alt=""></a>
-        <a class="content-buttons" routerLink="/books" ><img src="assets/images/books.png" class="image-class" alt=""></a>
-        <a class="content-buttons" ><img src="assets/images/slokas.png" class="image-class" alt=""></a>
-        <a class="content-buttons" ><img src="assets/images/diksha.png" class="image-class" alt=""></a>
-        <a class="content-buttons" ><img src="assets/images/matrimony.png" class="image-class" alt=""></a>
-        <a class="content-buttons" ><img src="assets/images/things.png" class="image-class" alt=""></a>
-        <a class="content-buttons" routerLink="/images" ><img src="assets/images/photo.png" class="image-class" alt=""></a>
-        <a class="content-buttons" ><img src="assets/images/donate.png" class="image-class" alt=""></a>
+    <div class="container d-flex justify-content-center content-navigators mt-3">
+      <div class="coloum-title row">
+        <div class="content-navigators col-6 col-md-4 col-lg-3">
+          @for(item of items; track item){
+            <div class="content-buttons" [routerLink]="item.routerLink">
+              <img [src]="item.imgSrc" class="image-class" [alt]="item.altText">
+            </div>
+          }
+        </div>
       </div>
     </div>
-
   </div>
 </div>

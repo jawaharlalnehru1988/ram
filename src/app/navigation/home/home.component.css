@@ -77,11 +77,7 @@
    
   }
 }
-@media (min-width:1420px) {
-  .content-navigators{
-    justify-content: space-around;
-  }
-}
+
 
 .custom-button {
   background-color: brown;
@@ -102,4 +98,33 @@
 .custom-button:visited {
   background-color: black;
   color: white;
+}
+
+
+.content-navigators {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .content-navigators {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 375px) {
+  .content-navigators {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 375px) {
+  .content-navigators {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .content-navigators {
+      grid-template-columns: repeat(4, 1fr);
+  }
 }
