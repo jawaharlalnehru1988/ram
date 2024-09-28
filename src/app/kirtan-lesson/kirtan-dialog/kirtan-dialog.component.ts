@@ -1,11 +1,16 @@
+
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Inject} from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { ApiService } from 'src/app/services/api.service';
 
 
 @Component({
+  standalone: true,
+  imports: [MatFormFieldModule, MatDialogModule, FormsModule, ReactiveFormsModule, MatIconModule],
   selector: 'app-kirtan-dialog',
   templateUrl: './kirtan-dialog.component.html',
   styleUrls: ['./kirtan-dialog.component.css']

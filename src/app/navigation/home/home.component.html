@@ -1,0 +1,28 @@
+<app-navigation></app-navigation>
+<div class="container-background">
+
+  <div class=" mx-auto">
+    <div class="flex flex-wrap">
+      <div class="w-full md:w-1/2 lg:w-1/2">
+        <img src="/assets/images/radakrishna.jpg" alt="" class="w-full h-auto">
+      </div>
+      <div class="w-full md:w-1/2 lg:w-1/2">
+        <app-events></app-events>
+      </div>
+    </div>
+  </div>
+</div>
+    <marquee behavior="scrolling" direction="left" class="marq">
+      <p>ஹரே கிருஷ்ண ஹரே கிருஷ்ண கிருஷ்ண கிருஷ்ண ஹரே ஹரே ஹரே ராம ஹரே ராம ராம ராம ஹரே ஹரே</p>
+    </marquee>
+    <div class="container-background">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-2 justify-items-center items-center">
+      @for(item of items; track item){
+        <div class="content-buttons" [routerLink]="item.routerLink">
+          <img [src]="item.imgSrc" class="image-class" [alt]="item.altText">
+        </div>
+      }
+    </div>
+    
+        </div>
+    

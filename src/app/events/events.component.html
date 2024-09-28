@@ -1,0 +1,75 @@
+<div class="flex flex-col md:flex-row justify-between">
+  <mat-card class="w-full md:w-1/2 flex justify-items-end mx-auto order-2 md:order-1 mb-4 md:mb-0">
+    <!-- hare krishna : {{selected | date:'dd-MMM-yyyy'}} -->
+  </mat-card>
+  <mat-card class="w-full md:w-1/2 flex justify-items-end mx-auto order-1 md:order-2">
+    <mat-calendar  (selectedChange)="onDateChange($event)" [dateClass]="dateClass" [(selected)]="selected"></mat-calendar>
+  </mat-card>
+</div>
+
+
+<div class="relative overflow-hidden border-4 border-blue-500 rounded-lg bg-gradient-to-r from-purple-400 to-blue-400 p-4 shadow-md">
+  <div class="animate-scroll whitespace-nowrap text-white text-lg font-bold tracking-wider">
+      For more information about Vaishnava festivals and practices, Please Whatsapp +91 6382043976 .
+  </div>
+</div>
+<!-- <p class="text-yellow-100">Selected date: {{selected()}}</p> -->
+
+ <!-- @if(isTamilOrEnglish) {
+  <article>
+    <p class="font-bold text-3xl text-center">இம்மாத நிகழ்வுகள்...</p> 
+      <header>
+          <h1>{{ currentMonth }} - 2024</h1>
+      </header>
+      <section class="">
+          <div class=" mx-auto">
+              @for (year of tamilYearEvents; track $index) {
+            <p class="text-xl font-bold mb-4">{{ year.month }} Month Events</p>
+            <div class="grid grid-cols-1 gap-4">
+              @for (event of year.events; track $index) {
+  
+                  <div class=" items-center p-4 bg-gray-100 rounded">
+                      <div class="text-lg font-semibold">{{ event.date }}</div>
+                      <div class="text-lg">{{ event.name }}</div>
+                  </div>
+              }
+            </div>
+          }
+          </div>
+        </section>
+      <div class="relative overflow-hidden border-4 border-blue-500 rounded-lg bg-gradient-to-r from-purple-400 to-blue-400 p-4 shadow-md">
+          <div class="animate-scroll whitespace-nowrap text-white text-lg font-bold tracking-wider">
+              For more information about Vaishnava festivals and practices, Please Whatsapp +91 6382043976 .
+          </div>
+        </div>
+  </article>
+} 
+@else{
+<article>
+  <p class="font-bold text-3xl text-center">Upcoming Events...</p> 
+    <header>
+        <h1>{{ currentMonth }} - 2024</h1>
+    </header>
+    <section class="">
+        <div class=" mx-auto">
+            @for (year of currentMonthObj; track $index) {
+          <p class="text-xl font-bold mb-4">{{ year.month }} Month Events</p>
+          <div class="grid grid-cols-1 gap-4">
+            @for (event of year.events; track $index) {
+
+                <div class=" items-center p-4 bg-gray-100 rounded">
+                    <div class="text-lg font-semibold">{{ event.date }}</div>
+                    <div class="text-lg">{{ event.name }}</div>
+                </div>
+            }
+          </div>
+        }
+        </div>
+      </section>
+    <div class="relative overflow-hidden border-4 border-blue-500 rounded-lg bg-gradient-to-r from-purple-400 to-blue-400 p-4 shadow-md">
+        <div class="animate-scroll whitespace-nowrap text-white text-lg font-bold tracking-wider">
+            For more information about Vaishnava festivals and practices, Please Whatsapp +91 6382043976 .
+        </div>
+      </div>
+</article>
+}  -->

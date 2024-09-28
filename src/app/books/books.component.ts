@@ -4,7 +4,9 @@ import { ViewportScroller } from "@angular/common";
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
-  styleUrls: ['./books.component.css']
+  styleUrls: ['./books.component.css'],
+  standalone: true,
+  imports: []
 })
 export class BooksComponent implements OnInit {
   books: any;

@@ -1,0 +1,26 @@
+
+
+.mat-calendar {
+    background-color: gold;
+}
+:host ::ng-deep .mat-calendar-body-selected {
+  background-color: #df1c1c !important;
+}
+
+.selected-date {
+  background-color: #f0f0f0;
+  color: #000000;
+}
+
+.animate-scroll {
+    animation: scroll-left 20s linear infinite;
+  }
+  
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }

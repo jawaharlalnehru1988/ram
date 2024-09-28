@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { LoginComponent } from './login/login.component';
+import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
+  standalone: true,
+  imports: [MatDialogModule, MatIconModule, MatFormFieldModule, ReactiveFormsModule],
   selector: 'app-info-collect',
   templateUrl: './info-collect.component.html',
   styleUrls: ['./info-collect.component.css']

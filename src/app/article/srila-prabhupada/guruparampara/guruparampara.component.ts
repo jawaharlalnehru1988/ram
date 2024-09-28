@@ -1,11 +1,16 @@
 import { HttpClient } from '@angular/common/http';
-import {AfterViewInit, Component,  OnInit, ViewChild} from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
+import {AfterViewInit, Component,  inject,  OnInit, ViewChild} from '@angular/core';
 import {MatSort} from '@angular/material/sort';
-import {MatDialog} from '@angular/material/dialog';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
-import { ActivatedRoute } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+
+import { MatIconModule } from '@angular/material/icon';
+import {
+  MatDialog,
+} from '@angular/material/dialog';
 
 export interface PeriodicElement {
   name: string;
@@ -14,24 +19,22 @@ export interface PeriodicElement {
   symbol: string;
 }
 @Component({
+  standalone: true,
+  imports: [MatFormFieldModule, MatTableModule, RouterModule, MatPaginatorModule, MatIconModule],
   selector: 'app-guruparampara',
   templateUrl: './guruparampara.component.html',
   styleUrls: ['./guruparampara.component.css']
 })
-export class GuruparamparaComponent implements OnInit, AfterViewInit {
+export class GuruparamparaComponent implements OnInit {
   displayedColumns: any[] = ['id', 'acharyaName', 'photo', 'details', 'edit', 'delete'];
   dataSource!: MatTableDataSource<any>;
-
+  private httpClient  = inject(HttpClient);
+  private dialog = inject(MatDialog);
   
   acharyas: any;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  ngAfterViewInit() {
-    // this.dataSource.paginator = this.paginator;
-  }
-  constructor(private httpClient: HttpClient, public dialog: MatDialog) { }
-  
   ngOnInit() {
     this.getDetails();    
   }

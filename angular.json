@@ -24,10 +24,8 @@
               "src/_redirects"
             ],
             "styles": [
+              "./node_modules/primeicons/primeicons.css",
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              
-              "node_modules/@fullcalendar/common/main.css",
-              "node_modules/@fullcalendar/daygrid/main.css",
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
@@ -38,7 +36,12 @@
             ],
             "allowedCommonJsDependencies": [
               "fast-deep-equal"
-            ]
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            }
           },
           "configurations": {
             "production": {
@@ -77,10 +80,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ram:build:production"
+              "buildTarget": "ram:build:production"
             },
             "development": {
-              "browserTarget": "ram:build:development"
+              "buildTarget": "ram:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,7 +91,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ram:build"
+            "buildTarget": "ram:build"
           }
         },
         "test": {
