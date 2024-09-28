@@ -1,55 +1,16 @@
-article {
-    width: 90%;
-    margin: 0 auto;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
+
+.mat-calendar {
+    background-color: gold;
+}
+:host ::ng-deep .mat-calendar-body-selected {
+  background-color: #df1c1c !important;
 }
 
-// Variables
-$primary-color: #4A90E2;
-$secondary-color: #F5A623;
-$background-color: #F5F5F5;
-$text-color: #333;
-
-// Global Styles
-body {
-    font-family: Arial, sans-serif;
-    color: $text-color;
-    background-color: $background-color;
-    margin: 0;
-    padding: 0;
+.selected-date {
+  background-color: #f0f0f0;
+  color: #000000;
 }
-
-header {
-    background-color: $primary-color;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    
-    h1 {
-        margin: 0;
-    }
-}
-
-section {
-    padding: 4px;
-    margin: 4px;
-
-    p {
-        line-height: 1.6;
-    }
-
-    ul, ol {
-        margin: 10px 0;
-        padding-left: 20px;
-    }
-
-    li {
-        margin-bottom: 10px;
-    }
-}
-
 
 .animate-scroll {
     animation: scroll-left 20s linear infinite;

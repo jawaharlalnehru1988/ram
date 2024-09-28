@@ -1,9 +1,9 @@
-import { CommonModule, DatePipe, getLocaleMonthNames } from '@angular/common';
-import { Component, model } from '@angular/core';
-import { FormsModule, NgModel, NgModelGroup } from '@angular/forms';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { CommonModule, DatePipe } from '@angular/common';
+import { Component, ViewEncapsulation, } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import {MatCalendarCellClassFunction, MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
-import { provideNativeDateAdapter } from '@angular/material/core';
+import { MatNativeDateModule, provideNativeDateAdapter } from '@angular/material/core';
 interface YearlyEvent {
   month: string; 
   events: Event[];
@@ -16,14 +16,22 @@ interface Event {
 @Component({
   selector: 'app-events',
   standalone: true,
-  imports: [ FormsModule, MatDatepickerModule, MatCardModule],
+  imports: [CommonModule, MatNativeDateModule, FormsModule, MatDatepickerModule, MatCardModule],
   providers: [DatePipe, provideNativeDateAdapter()],
   templateUrl: './events.component.html',
   styleUrl: './events.component.scss',
 })
 export class EventsComponent {
   date1: Date | undefined;
-  selected = model<Date | null>(null);
+  selected: Date = new Date('2024-09-20');
+  specialDates = [
+    new Date(2024, 8, 17), // September 17, 2024
+    new Date(2024, 8, 18)  // September 18, 2024
+  ];
+  dateClass = (date: Date): string => {
+    const dateString = date.toDateString();
+    return this.specialDates.some(d => d.toDateString() === dateString) ? 'special-date' : '';
+  };
   monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
@@ -86,7 +94,13 @@ export class EventsComponent {
 
 
   ];
-
+  highlightedDates = [
+    new Date('2024-09-11'),
+    new Date('2024-09-15'),
+    new Date('2024-09-16'),
+    new Date('2024-09-17'),
+    new Date('2024-09-18')
+  ];
   yearlyEvents:  YearlyEvent[]= [
     {
       month: 'September', 
@@ -278,5 +292,16 @@ export class EventsComponent {
       this.currentMonthObj = this.yearlyEvents.filter((obj) => obj.month === this.currentMonth);
       
   }
+
+  onDateChange(event:any){
+  console.log('event :', event);
+
+  }
+  // dateClass: MatCalendarCellClassFunction<Date> = (date: Date) => {
+  //   const selectedDate = new Date('23-09-2024'); // Replace with your desired date
+  
+  //   return date.toDateString() === selectedDate.toDateString() ? 'selected-date' : '';
+  // };
+  
 }
  
