@@ -4,7 +4,7 @@
     @for (book of books; track book) {
       <div class="particular-section">
         <h1>{{book.bname}}</h1>
-        <div fxLayout="row" fxLayoutAlign="center">
+        <div class="flex justify-between">
           <img [src]="book.imgsrc_fr" class="front-page" alt="">
           <img [src]="book.imgsrc_bc" class="back-page" alt="">
         </div>
