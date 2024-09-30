@@ -7,7 +7,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarOptions } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
-
 @Component({
   standalone: true,
   imports: [CommonModule, FullCalendarModule],
@@ -20,12 +19,13 @@ export class CalenderComponent implements OnInit {
   today = new Date();
   date!:Date;
   weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-  calendarOptions: any = {
+  calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
     plugins: [dayGridPlugin],
     weekends: true,
-    // dateClick: this.handleDateClick.bind(this), 
+    // dateClick: (arg: any)=> this.handleDateClick(arg), 
     events: [
+      { title: 'Meeting', start: new Date() },
       { title: "Utpana Ekadasi", date:'2022-11-20', color: 'red', EventId:1},
       { title: "Mokshada / Vaikuntha/ Mukkoti/ Gita Ekadasi", date:'2022-12-04', color: 'red', EventId: 2},
       { title: "Dwadasi", date:'2022-12-09', color: 'blue', EventId: 3},
